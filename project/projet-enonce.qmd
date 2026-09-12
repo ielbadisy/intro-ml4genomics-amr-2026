@@ -1,0 +1,221 @@
+---
+title: "Prédiction de la résistance à la ciprofloxacine chez *E. coli* : phénotypage non supervisé et prédiction supervisée"
+author: "DU Bioinformatique, UM6SS"
+date: today
+date-format: "D MMMM YYYY"
+lang: fr
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    theme: cosmo
+    self-contained: true
+    highlight-style: tango
+  pdf:
+    toc: true
+    number-sections: true
+    documentclass: article
+    geometry: margin=2.5cm
+bibliography: ../refs/references.bib
+---
+
+# Objectif
+
+Ce projet vous demande de reproduire, sur un jeu de données réel d'isolats
+d'*E. coli*, la démarche à deux volets présentée en cours : une analyse
+**non supervisée** (phénotypage, package `phynotype`) et une analyse
+**supervisée** (prédiction de la résistance, package `funcml`), puis de
+croiser les deux résultats.
+
+Question biologique : peut-on prédire la résistance à la
+**ciprofloxacine** (un antibiotique critique de première ligne pour les
+infections urinaires et bactériémies à *E. coli*) à partir de
+caractéristiques d'assemblage génomique, de métadonnées de collecte et de
+la co-résistance à sept autres antibiotiques ?
+
+Vous devez produire un document reproductible (Quarto ou R Markdown) qui
+exécute l'ensemble de l'analyse de bout en bout, du chargement des données
+brutes jusqu'à l'interprétation finale.
+
+# Jeu de données
+
+Fichier : `data/ecoli_amr_isolate_v2.csv` (701 isolats).
+
+Il a été construit à partir de deux sources brutes
+(`data/raw/ecoli_amr_raw.csv` et `data/raw/ecoli_metadata_raw.csv`,
+extraites de la base BV-BRC) par le script `data/build_clean_data.R` :
+un échantillon de 700 isolats d'*E. coli* pour lesquels au moins 3
+antibiotiques ont été testés et dont le statut ciprofloxacine est connu.
+Une ligne = un isolat. Les colonnes se répartissent en trois familles :
+
+- **caractéristiques d'assemblage génomique** : `genome_length`,
+  `gc_content`, `contigs`, `mlst`
+- **métadonnées de collecte** : `isolation_country`, `host_name`,
+  `host_group`, `collection_year`, `isolation_source`, `genome_quality`
+- **phénotypes de résistance (AST)** pour 8 antibiotiques, dont la cible
+  `ciprofloxacin` : `ampicillin`, `cefotaxime`, `ceftazidime`,
+  `ciprofloxacin`, `gentamicin`, `meropenem`, `pip_taz`
+  (pipéracilline/tazobactam), `sxt` (triméthoprime/sulfaméthoxazole),
+  chacune valant `Resistant`, `Susceptible`, `Intermediate` ou `NA`
+  (antibiotique non testé pour cet isolat).
+
+Détail de chaque variable :
+
+| Variable | Famille | Type | Description |
+|---|---|---|---|
+| `genome_id` | identifiant | caractère | identifiant unique de l'isolat |
+| `genome_length` | assemblage | numérique | longueur totale de l'assemblage (pb) |
+| `gc_content` | assemblage | numérique | pourcentage de GC du génome |
+| `contigs` | assemblage | numérique | nombre de contigs de l'assemblage |
+| `mlst` | assemblage | catégorielle | type de séquence multilocus (lignée) |
+| `isolation_country` | métadonnées | catégorielle | pays de collecte de l'isolat |
+| `host_name` | métadonnées | catégorielle | hôte d'origine (espèce) |
+| `host_group` | métadonnées | catégorielle | regroupement de l'hôte (humain / animal / autre) |
+| `collection_year` | métadonnées | numérique | année de collecte |
+| `isolation_source` | métadonnées | catégorielle | source du prélèvement (urine, sang, etc.) |
+| `genome_quality` | métadonnées | catégorielle | indicateur de qualité de l'assemblage |
+| `ampicillin` | AST | catégorielle | statut de résistance à l'ampicilline |
+| `cefotaxime` | AST | catégorielle | statut de résistance au céfotaxime |
+| `ceftazidime` | AST | catégorielle | statut de résistance à la ceftazidime |
+| `ciprofloxacin` | AST | catégorielle | statut de résistance à la ciprofloxacine (cible) |
+| `gentamicin` | AST | catégorielle | statut de résistance à la gentamicine |
+| `meropenem` | AST | catégorielle | statut de résistance au méropénème |
+| `pip_taz` | AST | catégorielle | statut de résistance à la pipéracilline/tazobactam |
+| `sxt` | AST | catégorielle | statut de résistance au triméthoprime/sulfaméthoxazole |
+
+Chaque variable AST vaut `Resistant`, `Susceptible`, `Intermediate` ou `NA`
+(antibiotique non testé pour cet isolat).
+
+Lisez le fichier `data/build_clean_data.R` avant de commencer : il
+documente précisément la provenance et la logique d'échantillonnage des
+données, ce qui vous aidera à justifier vos choix de prétraitement.
+
+# Travail demandé
+
+## Prétraitement
+
+1. Construisez la cible binaire `cipro_R` (résistant / sensible) à partir
+   de `ciprofloxacin`, en ne conservant que les isolats dont le statut est
+   sans ambiguïté (`Resistant` ou `Susceptible`).
+2. Traitez soigneusement **deux types de valeurs manquantes de nature
+   différente** : (i) un résultat AST absent signifie "non testé", un
+   statut cliniquement réel, à coder comme catégorie explicite, jamais à
+   imputer ; (ii) une métadonnée de collecte absente (p. ex.
+   `isolation_country`) est une donnée manquante au sens classique,
+   légitimement imputable. Pour ce second cas, utilisez le package
+   **`missknn`** (imputation par k plus proches voisins masqués) plutôt
+   qu'une catégorie "Inconnu" générique, et justifiez ce choix en une ou
+   deux phrases.
+3. Regroupez les modalités rares (pays, hôte) pour éviter des niveaux
+   absents d'un pli de validation croisée.
+4. Rapportez la prévalence de la résistance et discutez de son implication
+   sur le choix des métriques (déséquilibre de classes).
+
+## Apprentissage non supervisé (`phynotype`)
+
+1. Préparez les données mixtes (numériques + catégorielles) **sans**
+   utiliser la cible `cipro_R`.
+2. Ajustez une solution de clustering et validez-la (indices internes +
+   stabilité bootstrap) ; justifiez le choix du nombre de groupes $k$.
+3. Explorez la solution retenue (profils, tailles, biplot) et interprétez
+   au moins une méthode d'interprétabilité (importance par permutation,
+   ceteris paribus ou LIME).
+4. Croisez a posteriori le phénotype obtenu avec `cipro_R` : les groupes
+   trouvés sont-ils associés à la résistance, alors qu'ils ont été
+   construits sans jamais l'utiliser ?
+
+## Apprentissage supervisé (`funcml`)
+
+1. Séparez un jeu de test (environ 25 %), mis de côté une seule fois, avant
+   tout réglage ou sélection de modèle.
+2. Comparez, par validation croisée sur le jeu d'entraînement uniquement,
+   exactement les sept apprenants suivants, tous enregistrés directement
+   dans `funcml::compare()` : `glm`, `rpart`, `ranger`, **`fastgbm`**,
+   **`densemlp`**, `kknn`, `e1071_svm` (SVM). Rapportez, en plus de l'AUC
+   et du score de Brier, l'exactitude (`accuracy`) et le F1-score, et
+   discutez ce que ces deux dernières métriques ajoutent (ou pas) compte
+   tenu du déséquilibre de classes constaté en partie 1.
+3. Sélectionnez le meilleur modèle sur AUC validée croisée (en lisant
+   l'intervalle, pas seulement la moyenne), réglez ses hyperparamètres si
+   pertinent, puis ajustez le modèle final sur le jeu d'entraînement
+   complet.
+4. Vérifiez la robustesse du résultat par une validation croisée
+   **groupée** par pays de collecte (`group_cv()`), et comparez-la à la
+   validation croisée standard : un écart important est le signe d'un
+   effet de collecte plutôt que d'un effet biologique.
+5. Appliquez le modèle final au jeu de test et évaluez : courbe ROC + AUC,
+   score de Brier, courbe de calibration, et au moins une méthode
+   d'interprétabilité globale (importance par permutation ou SHAP global)
+   **et** une méthode locale (SHAP local sur une observation, ou courbe
+   ceteris paribus).
+6. Incluez le phénotype trouvé en partie 2 comme variable candidate du
+   modèle supervisé.
+
+## Question de lecture croisée
+
+Le phénotype non supervisé contribue-t-il réellement au modèle
+supervisé ? Justifiez à partir de l'importance de variable / SHAP.
+
+## Hypothèses de travail à discuter
+
+Formulez votre propre lecture (2 à 4 phrases chacune, appuyées sur vos
+résultats) des trois pistes suivantes :
+
+1. **H1, co-résistance** : la résistance aux autres antibiotiques
+   (bêta-lactamines, aminosides) est-elle associée à la résistance
+   ciprofloxacine, et cette association est-elle plausible biologiquement
+   (éléments génétiques mobiles partagés) ?
+2. **H2, signal d'assemblage** : `genome_length`/`gc_content`
+   apportent-ils un signal, et si oui, de quelle nature (direct ou
+   indirect) ?
+3. **H3, confusion géographique/hôte** : la répartition inégale du pays
+   ou de l'hôte entre classes traduit-elle un effet de collecte, un effet
+   biologique réel (diffusion d'un clone résistant), ou les deux ?
+
+# Garde-fous méthodologiques (évalués)
+
+Votre rapport doit montrer explicitement que vous avez évité les cinq
+pièges de l'apprentissage automatique en génomique vus en Partie 1 du
+cours :
+
+1. **Décalage de distribution** : le jeu de test est-il représentatif ?
+2. **Dépendance entre exemples** : la validation groupée par pays a-t-elle
+   été utilisée à bon escient ?
+3. **Confusion** : la structure de population (pays, hôte) a-t-elle été
+   discutée comme facteur de confusion possible ?
+4. **Fuite de données** : tout prétraitement (imputation, sélection de
+   variables) est-il ajusté uniquement sur les données d'entraînement, à
+   l'intérieur de la boucle de validation croisée ?
+5. **Déséquilibre de classes** : les métriques choisies (AUC, Brier,
+   calibration, exactitude, F1) sont-elles adaptées à la prévalence
+   observée ?
+
+# Livrables
+
+- Un document Quarto (`.qmd`) reproductible, avec tout le code exécuté et
+  ses sorties (tableaux, graphiques).
+- Un export PDF ou HTML du document rendu.
+- Une conclusion écrite (une demi-page environ) répondant explicitement
+  aux hypothèses H1–H3 et à la question de lecture croisée (partie 4),
+  en rappelant les limites de l'analyse (pas de preuve causale, pas de
+  validation externe).
+
+# Installation
+
+Tous les packages du projet sont installés depuis leur version de
+développement sur GitHub, via `pak` :
+
+```r
+install.packages("pak")
+pak::pak(c(
+  "ielbadisy/funcml",
+  "ielbadisy/missknn",
+  "ielbadisy/phynotype"
+))
+```
+
+`fastgbm` et `densemlp` sont des dépendances de `funcml` (apprenants
+enregistrés directement dans le package) : ils sont installés
+automatiquement avec `funcml`, il n'est pas nécessaire de les installer ni
+de les charger séparément.

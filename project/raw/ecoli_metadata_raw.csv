@@ -1,0 +1,701 @@
+"mlst","contigs","genome_id","genome_name","genome_quality","isolation_country","genome_length","gc_content","host_name","collection_year","isolation_source","host_group"
+"MLST.Escherichia_coli_2.88",274,"562.144939","Escherichia coli MGL_133","Good","India",5243656,50.726078,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.10",281,"562.144952","Escherichia coli PT_EC0171","Good","Portugal",5312076,50.175243,"Pig, Sus scrofa",2021,"Faeces",NA
+"MLST.ecoli_achtman_4.20",249,"562.145015","Escherichia coli PT_EC0139","Good","Portugal",5081896,50.498848,"Cat, Felis catus",2020,"Faeces",NA
+"MLST.ecoli_achtman_4.590",218,"562.145022","Escherichia coli PT_EC0153","Good","Portugal",4907719,50.59114,"Cat, Felis catus",2020,"Faeces",NA
+"MLST.Escherichia_coli_1.753",382,"562.145027","Escherichia coli PT_EC0037","Good","Portugal",5410436,50.74393,"wild boar",2020,"Faeces",NA
+"MLST.Escherichia_coli_1.738",379,"562.145029","Escherichia coli PT_EC0007","Good","Portugal",5571630,50.69615,"fallow deer",2020,"Faeces",NA
+"MLST.ecoli_achtman_4.10",132,"562.145042","Escherichia coli PT_EC0136","Good","Portugal",4835144,50.32669,"Dog, Canis lupus familiaris",2019,"Faeces",NA
+"MLST.ecoli_achtman_4.297",203,"562.145051","Escherichia coli PT_EC0201","Good","Portugal",4977412,50.86764,"Cow, Bos taurus",2010,"Meat",NA
+"MLST.ecoli_achtman_4.155",99,"562.145397","Escherichia coli AGA06_2488","Good","Canada",5048393,50.79333,"Chicken, Gallus gallus",2006,NA,NA
+"MLST.ecoli_achtman_4.1640",169,"562.145398","Escherichia coli AGA06_2492","Good","Canada",5277923,50.78746,"Chicken, Gallus gallus",2006,NA,NA
+"MLST.ecoli_achtman_4.117",163,"562.145433","Escherichia coli AGA06_2563","Good","Canada",5209574,50.801888,"Chicken, Gallus gallus",2006,NA,NA
+"MLST.ecoli_achtman_4.117",134,"562.145812","Escherichia coli MSHS 1014A","Good","Canada",4990937,50.754276,"Human, Homo sapiens",2007,NA,NA
+"MLST.ecoli_achtman_4.69",146,"562.145822","Escherichia coli UTI PI 500","Good","Canada",5294033,50.643223,"Human, Homo sapiens",2000,NA,NA
+"MLST.ecoli_achtman_4.1408",3,"562.16325","Escherichia coli strain AR_0061","Good",NA,4734219,50.79,NA,NA,NA,NA
+"MLST.ecoli_achtman_4.617",3,"562.16466","Escherichia coli strain 5CRE51","Good","Taiwan",5256426,50.62,"Human, Homo sapiens",2016,"urine","Human"
+"MLST.ecoli_achtman_4.5561",89,"562.22439","Escherichia coli O25:H1 strain ECO0011","Good","United Kingdom",5049324,50.5,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.73",113,"562.22441","Escherichia coli O6:H1 strain ECO0014","Good","United Kingdom",5154450,50.54,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.5546",88,"562.22444","Escherichia coli O2:H1 strain ECO0017","Good","United Kingdom",4999725,50.43,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.131",102,"562.22455","Escherichia coli O25:H4 strain ECO0029","Good","United Kingdom",5105361,50.75,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.88",105,"562.22458","Escherichia coli O8:H4 strain ECO0030","Good","United Kingdom",4987674,50.54,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.23",72,"562.22462","Escherichia coli O78:H9 strain ECO0035","Good","United Kingdom",4782754,50.6,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.405",147,"562.22464","Escherichia coli O102:H6 strain ECO0038","Good","United Kingdom",5250453,50.52,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.69",176,"562.22471","Escherichia coli O17:H18 strain ECO0043","Good","United Kingdom",5362352,50.5,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.88",123,"562.22480","Escherichia coli O11:H21 strain ECO0053","Good","United Kingdom",5086607,50.65,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.59",191,"562.22482","Escherichia coli O1:H7 strain ECO0055","Good","United Kingdom",5087296,50.55,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.131",103,"562.22483","Escherichia coli O25:H4 strain ECO0056","Good","United Kingdom",5245777,50.67,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.69",156,"562.22485","Escherichia coli O17:H18 strain ECO0058","Good","United Kingdom",5381197,50.57,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.73",102,"562.22489","Escherichia coli O18:H1 strain ECO0062","Good","United Kingdom",5133772,50.56,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.80",108,"562.22513","Escherichia coli O2:H7 strain ECO0086","Good","United Kingdom",5061046,50.3,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.131",109,"562.22536","Escherichia coli O25:H4 strain ECO0111","Good","United Kingdom",5250393,50.66,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.117",125,"562.22547","Escherichia coli O85:H4 strain ECO0122","Good","United Kingdom",5116933,50.78,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.95",101,"562.22564","Escherichia coli O2:H4 strain ECO0139","Good","United Kingdom",5018502,50.63,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.5253",100,"562.22579","Escherichia coli O6:H1 strain ECO0154","Good","United Kingdom",5042887,50.42,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.80",123,"562.22593","Escherichia coli O2:H7 strain ECO0169","Good","United Kingdom",5153842,50.24,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.131",131,"562.22595","Escherichia coli O25:H4 strain ECO0171","Good","United Kingdom",5162522,50.74,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.131",110,"562.22596","Escherichia coli O25:H4 strain ECO0172","Good","United Kingdom",5087917,50.74,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.131",128,"562.100003","Escherichia coli c1b4da3e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5118160,50.726784,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.127",97,"562.100006","Escherichia coli 87cd86fa-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5054133,50.439335,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.73",206,"562.100015","Escherichia coli 8a579262-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5229446,50.531128,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.131",131,"562.100023","Escherichia coli ef72b1ae-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5273801,50.702408,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.127",100,"562.100041","Escherichia coli 3e6b74d0-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5150302,50.496147,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.73",147,"562.100042","Escherichia coli 20aafda8-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5257893,50.45616,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.69",101,"562.100045","Escherichia coli 2117b722-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5267078,50.754898,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.73",73,"562.100051","Escherichia coli 1dbbf05c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5033388,50.46146,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.8867",102,"562.100067","Escherichia coli 24da3330-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4606726,50.820343,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.2531",170,"562.100069","Escherichia coli 24f42330-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4895314,50.755764,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.14",166,"562.100074","Escherichia coli 1c1279b0-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5328499,50.394905,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.617",143,"562.100083","Escherichia coli 278ef6f6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5019302,50.565475,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.88",106,"562.100088","Escherichia coli 1f688e7e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5109105,50.636833,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.95",67,"562.100097","Escherichia coli 7ea2dfde-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5061309,50.549908,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.131",117,"562.100121","Escherichia coli fd3bfa2a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5111345,50.702095,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.5705",91,"562.100143","Escherichia coli 03fe84d6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5145084,50.67173,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.95",90,"562.100148","Escherichia coli fa963fec-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4989655,50.630276,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.201",90,"562.100156","Escherichia coli fb98a178-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4886382,50.7595,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.95",86,"562.100157","Escherichia coli fb7f213a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5084373,50.51683,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.73",183,"562.100176","Escherichia coli eb1502a6-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5186801,50.444965,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.48",152,"562.100180","Escherichia coli b3285342-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4970076,50.665462,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.12",106,"562.100191","Escherichia coli ad38fc20-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5057010,50.39353,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.127",111,"562.100194","Escherichia coli adf6c926-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5277949,50.41981,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.1316",156,"562.100204","Escherichia coli d6262e5a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4572893,50.78284,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.73",74,"562.100214","Escherichia coli cba0756c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5008779,50.556095,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.73",130,"562.100226","Escherichia coli db003a88-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5201871,50.464207,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.2015",62,"562.100227","Escherichia coli dd91488c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4786540,50.643993,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.550",84,"562.100235","Escherichia coli 2ae41bd8-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4986985,50.63406,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.95",131,"562.100237","Escherichia coli 2b9c37f4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5300617,50.647575,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.73",140,"562.100243","Escherichia coli 2d88e080-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5119343,50.530254,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.69",98,"562.100245","Escherichia coli 2cdc979e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5114783,50.604298,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.421",105,"562.100250","Escherichia coli 58723580-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5080349,50.5645,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.12",135,"562.100256","Escherichia coli 2928ee04-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5212044,50.444508,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.38",95,"562.100260","Escherichia coli 29ef2e66-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5085647,50.599854,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.394",131,"562.100269","Escherichia coli 709fabba-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5348533,50.538044,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.428",68,"562.100303","Escherichia coli c9d7a3d6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4945047,50.34672,NA,2015,NA,NA
+"MLST.ecoli_achtman_4.95",90,"562.100310","Escherichia coli 8fc31262-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5015353,50.574345,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.95",79,"562.100314","Escherichia coli caa6eeee-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5216254,50.477085,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.968",140,"562.100319","Escherichia coli 07782202-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5107205,50.454918,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.131",112,"562.100331","Escherichia coli 0bd7f926-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5240631,50.697197,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.69",108,"562.100340","Escherichia coli 0d170b6a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5208858,50.616585,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.1170",117,"562.100347","Escherichia coli 41deb096-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5230922,50.40406,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.131",88,"562.100361","Escherichia coli 43a7d830-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5261524,50.708103,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.73",135,"562.100373","Escherichia coli 1d6961d4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5145171,50.43426,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.421",87,"562.100377","Escherichia coli 0973e578-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4937142,50.528908,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.131",141,"562.100386","Escherichia coli 94d8cea4-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5170798,50.668503,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.73",108,"562.100398","Escherichia coli 9754ba08-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5063739,50.534676,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.131",71,"562.100405","Escherichia coli 9172d692-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5016723,50.77978,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.10",253,"562.100412","Escherichia coli 7d114d5e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5119004,50.765736,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.372",58,"562.100422","Escherichia coli f6a31cac-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4757249,50.414345,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.404",113,"562.100423","Escherichia coli ebf3598e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5091729,50.697926,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.405",220,"562.100435","Escherichia coli fd74e95c-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5294741,50.609463,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.69",133,"562.100442","Escherichia coli edfc5a5a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5141208,50.691746,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.83",54,"562.100448","Escherichia coli eed802bc-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5118961,50.44166,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.73",156,"562.100465","Escherichia coli f12d5c42-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5224522,50.351974,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.73",86,"562.100467","Escherichia coli f16399ce-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5032009,50.533096,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.141",73,"562.100471","Escherichia coli 062bb526-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5077448,50.559395,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.95",128,"562.100477","Escherichia coli f242e138-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5224467,50.63211,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.10",177,"562.100478","Escherichia coli e9eb5542-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4970104,50.670307,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.2673",64,"562.100493","Escherichia coli b76a302e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4927498,50.5489,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.117",147,"562.100503","Escherichia coli baa5c834-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5017029,50.56688,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.69",150,"562.100531","Escherichia coli cbf2411c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5155091,50.70997,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.550",101,"562.100552","Escherichia coli e5800736-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5032982,50.64135,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.69",150,"562.100558","Escherichia coli e61f8176-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5150018,50.769726,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.95",106,"562.100606","Escherichia coli c3d1f90a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5145107,50.491623,NA,2016,NA,NA
+"MLST.ecoli_achtman_4.641",74,"562.100614","Escherichia coli 902c1e10-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4866840,50.454113,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.362",69,"562.100618","Escherichia coli c5b03b8e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5033686,50.615017,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.69",141,"562.100628","Escherichia coli 21eafdbc-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5273831,50.611103,NA,2017,NA,NA
+"MLST.Escherichia_coli_1.14,MLST.Escherichia_coli_2.6",111,"562.100636","Escherichia coli 42ebcda2-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5024868,50.511196,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.1193",97,"562.100640","Escherichia coli 43c2c79e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5023974,50.60307,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.73",132,"562.100641","Escherichia coli 1bd0f184-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5113704,50.413067,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.69",114,"562.100650","Escherichia coli 9ebd2848-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5219990,50.738316,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.141",97,"562.100685","Escherichia coli 9604128e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5006806,50.55149,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.95",123,"562.100687","Escherichia coli 9b985cc8-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5173815,50.51945,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.69",114,"562.100693","Escherichia coli a1a978f4-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5148385,50.71155,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.141",205,"562.100723","Escherichia coli a3f7324a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5309644,50.663433,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.12",86,"562.100730","Escherichia coli a45c18a4-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5171104,50.48595,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.10253",100,"562.100732","Escherichia coli a475684a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5071852,50.380947,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.127",88,"562.100735","Escherichia coli 9c0cb122-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5003394,50.43131,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.491",99,"562.100737","Escherichia coli 9a817824-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5008804,50.617813,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.131",146,"562.100742","Escherichia coli 9b247db2-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5274149,50.69453,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.73",105,"562.100748","Escherichia coli a71797e4-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5129690,50.463497,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.131",170,"562.100751","Escherichia coli 91dff98e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5398414,50.702503,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.95",61,"562.100753","Escherichia coli 9cfbc442-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5165229,50.511528,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.73",107,"562.100770","Escherichia coli 9e17cbdc-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5217549,50.48637,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.73",115,"562.100771","Escherichia coli 00455662-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5146269,50.474625,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.69",122,"562.100778","Escherichia coli f6efdb6e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5123166,50.656273,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.624",163,"562.100800","Escherichia coli f9617b5a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5478286,50.439335,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.538",76,"562.100805","Escherichia coli fa1f64d0-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4880834,50.48406,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.69",98,"562.100806","Escherichia coli fa04b932-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4958950,50.611782,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.357",49,"562.100807","Escherichia coli 046c7b9e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4931443,50.451298,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.919",75,"562.100812","Escherichia coli fdc4c314-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4946506,50.68135,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.12",94,"562.100813","Escherichia coli fae7431a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4964661,50.457,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.73",111,"562.100850","Escherichia coli ba21d61e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5110207,50.46455,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.14",176,"562.100862","Escherichia coli be64d000-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5298772,50.44582,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.95",142,"562.100869","Escherichia coli d6a8c298-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5236787,50.675995,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.131",226,"562.100886","Escherichia coli d0d37d4a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5264993,50.496914,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.696",73,"562.100904","Escherichia coli 2b346c64-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4889101,50.691753,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.409",190,"562.100913","Escherichia coli 2c9ea92a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4906379,51.04153,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.1161",87,"562.100918","Escherichia coli 289d96ec-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5013967,50.49379,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.73",148,"562.100954","Escherichia coli 6dbe1512-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5243418,50.56982,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.95",98,"562.100964","Escherichia coli 5cd7c0cc-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5057426,50.53986,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.167",259,"562.135559","Escherichia coli MGL_90","Good","India",4908854,50.879494,"Homo sapiens",2020,"Pus","Human"
+"MLST.ecoli_achtman_4.156",120,"562.135572","Escherichia coli MGL_123","Good","India",4879171,50.678303,"Homo sapiens",2020,"Urine","Human"
+"MLST.ecoli_achtman_4.167",144,"562.135573","Escherichia coli MGL_117","Good","India",5049959,50.656628,"Homo sapiens",2020,"Pus","Human"
+"MLST.ecoli_achtman_4.167",171,"562.135575","Escherichia coli MGL_118","Good","India",5024673,50.7883,"Homo sapiens",2020,"Pus","Human"
+"MLST.ecoli_achtman_4.131",86,"562.140830","Escherichia coli 015-E1-DxU","Good","USA",5063936,50.70783,"Human, Homo sapiens",2017,NA,NA
+"MLST.ecoli_achtman_4.131",190,"562.140858","Escherichia coli 004-E1-U04","Good","USA",5019748,50.71195,"Human, Homo sapiens",2017,NA,NA
+NA,190,"562.140860","Escherichia coli 004-E1-U02","Good","USA",5032322,50.705997,"Human, Homo sapiens",2017,NA,NA
+"MLST.ecoli_achtman_4.131",126,"562.140864","Escherichia coli 013-E2-U04","Good","USA",5242826,50.71099,"Human, Homo sapiens",2017,NA,NA
+"MLST.ecoli_achtman_4.131",119,"562.140867","Escherichia coli 013-E2-U01","Good","USA",5215910,50.75864,"Human, Homo sapiens",2017,NA,NA
+"MLST.ecoli_achtman_4.131",148,"562.140871","Escherichia coli 013-E3-U04","Good","USA",5336279,50.659775,"Human, Homo sapiens",2017,NA,NA
+"MLST.ecoli_achtman_4.131",77,"562.140874","Escherichia coli 013-E1-S01","Good","USA",5172344,50.71053,"Human, Homo sapiens",2017,NA,NA
+"MLST.ecoli_achtman_4.131",103,"562.140881","Escherichia coli 013-E2-S04","Good","USA",5225513,50.697933,"Human, Homo sapiens",2017,NA,NA
+"MLST.ecoli_achtman_4.73",76,"562.22606","Escherichia coli O6:H1 strain ECO0182","Good","United Kingdom",4941266,50.56,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.117",122,"562.22607","Escherichia coli O24:H4 strain ECO0183","Good","United Kingdom",5021939,50.73,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.131",97,"562.22612","Escherichia coli O16:H5 strain ECO0188","Good","United Kingdom",4905127,50.69,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.73",111,"562.22613","Escherichia coli O2:H1 strain ECO0189","Good","United Kingdom",5144662,50.38,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.95",96,"562.22617","Escherichia coli O2:H4 strain ECO0202","Good","United Kingdom",5071440,50.65,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.1722",76,"562.22618","Escherichia coli O1:H25 strain ECO0203","Good","United Kingdom",4988640,50.45,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.95",139,"562.22632","Escherichia coli O2:H4 strain ECO0217","Good","United Kingdom",5131280,50.37,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.127",88,"562.22641","Escherichia coli O6:H31 strain ECO0229","Good","United Kingdom",5104472,50.44,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.131",142,"562.22642","Escherichia coli O25:H4 strain ECO0230","Good","United Kingdom",5128917,50.65,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.95",101,"562.22649","Escherichia coli O1:H7 strain ECO0236","Good","United Kingdom",5015518,50.52,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.69",168,"562.22652","Escherichia coli O15:H18 strain ECO0239","Good","United Kingdom",5222035,50.63,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.538",80,"562.22667","Escherichia coli O13/O135:H4 strain ECO0255","Good","United Kingdom",5067810,50.33,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.131",135,"562.22669","Escherichia coli O25:H4 strain ECO0257","Good","United Kingdom",5080577,50.8,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.10",141,"562.22687","Escherichia coli NA:H2 strain ECO0279","Good","United Kingdom",5148227,50.51,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.95",100,"562.22705","Escherichia coli O1:H7 strain ECO0295","Good","United Kingdom",4944090,50.51,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.95",67,"562.22723","Escherichia coli O1:H7 strain ECO0310","Good","United Kingdom",5192969,50.64,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.95",102,"562.22730","Escherichia coli O2:H7 strain ECO0317","Good","United Kingdom",5244839,50.64,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.5389",107,"562.22742","Escherichia coli O4:H5 strain ECO0332","Good","United Kingdom",5216200,50.48,"Human, Homo sapiens",2012,NA,"Human"
+"MLST.ecoli_achtman_4.91",74,"562.22776","Escherichia coli O39:H4 strain ECO0370","Good","United Kingdom",4907236,50.59,"Human, Homo sapiens",2012,NA,"Human"
+"MLST.ecoli_achtman_4.73",105,"562.22790","Escherichia coli O6:H1 strain ECO0386","Good","United Kingdom",5023910,50.51,"Human, Homo sapiens",2012,NA,"Human"
+"MLST.ecoli_achtman_4.95",93,"562.22801","Escherichia coli O18:H7 strain ECO0399","Good","United Kingdom",4957899,50.63,"Human, Homo sapiens",2012,NA,"Human"
+"MLST.ecoli_achtman_4.73",117,"562.22818","Escherichia coli O6:H1 strain ECO0417","Good","United Kingdom",5171129,50.4,"Human, Homo sapiens",2012,NA,"Human"
+"MLST.ecoli_achtman_4.421",75,"562.22828","Escherichia coli O1:H7 strain ECO0440","Good","United Kingdom",4963585,50.56,"Human, Homo sapiens",2001,NA,"Human"
+"MLST.ecoli_achtman_4.73",109,"562.22846","Escherichia coli O6:H1 strain ECO0461","Good","United Kingdom",5185945,50.45,"Human, Homo sapiens",2001,NA,"Human"
+"MLST.ecoli_achtman_4.624",94,"562.22879","Escherichia coli O25:H4 strain ECO0392","Good","United Kingdom",5082353,50.52,"Human, Homo sapiens",2012,NA,"Human"
+"MLST.ecoli_achtman_4.10",118,"562.22881","Escherichia coli O8:H4 strain ECO0454","Good","United Kingdom",4928770,50.74,"Human, Homo sapiens",2001,NA,"Human"
+"MLST.ecoli_achtman_4.5082",50,"562.22909","Escherichia coli O170:H7 strain ECO0516","Good","United Kingdom",4681886,50.75,"Human, Homo sapiens",2002,NA,"Human"
+"MLST.ecoli_achtman_4.73",104,"562.22911","Escherichia coli O6:H1 strain ECO0518","Good","United Kingdom",5021808,50.52,"Human, Homo sapiens",2002,NA,"Human"
+"MLST.ecoli_achtman_4.106",100,"562.22929","Escherichia coli O17:H18 strain ECO0539","Good","United Kingdom",5069269,50.53,"Human, Homo sapiens",2002,NA,"Human"
+"MLST.ecoli_achtman_4.5363",149,"562.22950","Escherichia coli O21:H4 strain ECO0563","Good","United Kingdom",4974905,50.57,"Human, Homo sapiens",2002,NA,"Human"
+"MLST.ecoli_achtman_4.372",66,"562.22953","Escherichia coli O83:H31 strain ECO0566","Good","United Kingdom",5087892,50.36,"Human, Homo sapiens",2002,NA,"Human"
+"MLST.ecoli_achtman_4.73",120,"562.22961","Escherichia coli O6:H1 strain ECO0579","Good","United Kingdom",5133404,50.44,"Human, Homo sapiens",2002,NA,"Human"
+"MLST.ecoli_achtman_4.73",108,"562.22967","Escherichia coli O6:H1 strain ECO0590","Good","United Kingdom",5157358,50.39,"Human, Homo sapiens",2002,NA,"Human"
+"MLST.ecoli_achtman_4.141",79,"562.23003","Escherichia coli O2:H6 strain ECO0628","Good","United Kingdom",5013492,50.53,"Human, Homo sapiens",2003,NA,"Human"
+"MLST.ecoli_achtman_4.363",76,"562.23019","Escherichia coli O134:H31 strain ECO0645","Good","United Kingdom",5022953,50.49,"Human, Homo sapiens",2003,NA,"Human"
+"MLST.ecoli_achtman_4.12",97,"562.23039","Escherichia coli O4:H5 strain ECO0675","Good","United Kingdom",5148977,50.39,"Human, Homo sapiens",2003,NA,"Human"
+"MLST.ecoli_achtman_4.12",109,"562.23051","Escherichia coli O18:H5 strain ECO0685","Good","United Kingdom",5169138,50.45,"Human, Homo sapiens",2003,NA,"Human"
+"MLST.ecoli_achtman_4.73",104,"562.23089","Escherichia coli O6:H1 strain ECO0730","Good","United Kingdom",5091459,50.42,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.73",72,"562.23093","Escherichia coli O22:H1 strain ECO0734","Good","United Kingdom",5001590,50.58,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.73",109,"562.23107","Escherichia coli O6:H1 strain ECO0751","Good","United Kingdom",5019642,50.42,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.80",146,"562.23109","Escherichia coli O75:H7 strain ECO0756","Good","United Kingdom",5456915,50.16,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.10",162,"562.23130","Escherichia coli O2:H48 strain ECO0520","Good","United Kingdom",5042704,50.55,"Human, Homo sapiens",2002,NA,"Human"
+"MLST.ecoli_achtman_4.62",156,"562.23149","Escherichia coli O7:H45 strain ECO0663","Good","United Kingdom",5310763,50.48,"Human, Homo sapiens",2003,NA,"Human"
+"MLST.ecoli_achtman_4.69",147,"562.23150","Escherichia coli O15:H18 strain ECO0664","Good","United Kingdom",5127413,50.67,"Human, Homo sapiens",2003,NA,"Human"
+"MLST.ecoli_achtman_4.144",138,"562.23175","Escherichia coli O16:H6 strain ECO0792","Good","United Kingdom",5211401,50.48,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.95",60,"562.23185","Escherichia coli O2:H7 strain ECO0803","Good","United Kingdom",5071486,50.5,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.131",287,"562.23195","Escherichia coli NA:H4 strain ECO0817","Good","United Kingdom",5398030,50.65,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.491",59,"562.23197","Escherichia coli O54:H45 strain ECO0819","Good","United Kingdom",4911351,50.55,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.23",110,"562.23206","Escherichia coli O78:H4 strain ECO0829","Good","United Kingdom",5038778,50.5,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.73",101,"562.23218","Escherichia coli O6:H1 strain ECO0841","Good","United Kingdom",5001491,50.51,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.73",84,"562.23227","Escherichia coli O18:H1 strain ECO0851","Good","United Kingdom",5023887,50.52,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.131",120,"562.23231","Escherichia coli O25:H4 strain ECO0855","Good","United Kingdom",5247577,50.67,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.73",77,"562.23237","Escherichia coli O6:H1 strain ECO0865","Good","United Kingdom",4884372,50.54,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.131",110,"562.23248","Escherichia coli O25:H4 strain ECO0876","Good","United Kingdom",5275918,50.67,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.2272",89,"562.23260","Escherichia coli O45:H7 strain ECO0894","Good","United Kingdom",4981503,50.71,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.69",83,"562.23264","Escherichia coli O17:H18 strain ECO0899","Good","United Kingdom",5068088,50.67,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.533",81,"562.23272","Escherichia coli O9:H31 strain ECO0918","Good","United Kingdom",4859561,50.68,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.95",109,"562.23299","Escherichia coli O2:H4 strain ECO0949","Good","United Kingdom",4939784,50.64,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.357",53,"562.23318","Escherichia coli O13/O135:H4 strain ECO0970","Good","United Kingdom",4998418,50.44,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.131",63,"562.23326","Escherichia coli O16:H5 strain ECO1054","Good","United Kingdom",4692142,50.69,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.95",72,"562.23350","Escherichia coli O2:H7 strain ECO1114","Good","United Kingdom",5183303,50.53,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.58",123,"562.23353","Escherichia coli O8:H25 strain ECO1117","Good","United Kingdom",4964500,50.8,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.12",52,"562.23363","Escherichia coli O4:H5 strain ECO1006","Good","United Kingdom",5038694,50.57,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.69",127,"562.23370","Escherichia coli O17:H18 strain ECO1135","Good","United Kingdom",5175468,50.61,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.95",79,"562.23378","Escherichia coli O18:H7 strain ECO1143","Good","United Kingdom",5075479,50.52,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.131",114,"562.23398","Escherichia coli O25:H4 strain ECO1168","Good","United Kingdom",5158648,50.7,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.131",159,"562.23403","Escherichia coli O25:H4 strain ECO1169","Good","United Kingdom",5253506,50.67,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.95",119,"562.23412","Escherichia coli O25:H4 strain ECO1237","Good","United Kingdom",5280221,50.59,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.5425",81,"562.23417","Escherichia coli O18:H7 strain ECO0979","Good","United Kingdom",5081114,50.61,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.69",122,"562.23436","Escherichia coli O17:H18 strain ECO1001","Good","United Kingdom",5307058,50.63,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.69",115,"562.23467","Escherichia coli O17:H18 strain ECO1035","Good","United Kingdom",5154742,50.69,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.131",92,"562.23474","Escherichia coli O25:H4 strain ECO1041","Good","United Kingdom",5098896,50.79,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.648",126,"562.23481","Escherichia coli O1:H6 strain ECO1046","Good","United Kingdom",5479476,50.32,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.405",151,"562.23494","Escherichia coli O102:H6 strain ECO1023","Good","United Kingdom",5291575,50.54,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.73",144,"562.23526","Escherichia coli O6:H1 strain ECO1214","Good","United Kingdom",5171366,50.39,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.95",81,"562.23527","Escherichia coli O1:H7 strain ECO1215","Good","United Kingdom",4952228,50.44,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.5604",69,"562.23540","Escherichia coli O4:H5 strain ECO1281","Good","United Kingdom",5124092,50.53,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.131",114,"562.23542","Escherichia coli O25:H4 strain ECO1228","Good","United Kingdom",5144096,50.75,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.127",82,"562.23549","Escherichia coli O6:H31 strain ECO1251","Good","United Kingdom",4923371,50.5,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.23",91,"562.23554","Escherichia coli O78:H4 strain ECO1047","Good","United Kingdom",5031860,50.62,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.538",43,"562.23557","Escherichia coli O13/O135:H4 strain ECO1243","Good","United Kingdom",4868968,50.51,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.131",130,"562.23566","Escherichia coli O25:H4 strain ECO1268","Good","United Kingdom",5318520,50.71,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.38",141,"562.23580","Escherichia coli O86:H18 strain ECO1280","Good","United Kingdom",5279411,50.44,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.38",129,"562.23594","Escherichia coli O86:H30 strain ECO1166","Good","United Kingdom",5306426,50.36,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.88",155,"562.23603","Escherichia coli NA:H4 strain ECO1313","Good","United Kingdom",5170788,50.54,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.538",50,"562.23707","Escherichia coli O13/O135:H4 strain ECO1430","Good","United Kingdom",4803907,50.49,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.1423",73,"562.23709","Escherichia coli O48:H7 strain ECO1432","Good","United Kingdom",4847192,50.63,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.69",148,"562.23724","Escherichia coli O17:H18 strain ECO1451","Good","United Kingdom",5419329,50.58,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.95",61,"562.23731","Escherichia coli O1:H7 strain ECO1460","Good","United Kingdom",5045958,50.5,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.73",98,"562.23736","Escherichia coli O6:H1 strain ECO1469","Good","United Kingdom",5076526,50.44,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.131",110,"562.23760","Escherichia coli O25:H4 strain ECO1507","Good","United Kingdom",5110385,50.76,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.62",152,"562.23785","Escherichia coli O7:H45 strain ECO0741","Good","United Kingdom",5162635,50.56,"Human, Homo sapiens",2004,NA,"Human"
+"MLST.ecoli_achtman_4.69",128,"562.23801","Escherichia coli O17:H18 strain ECO0931","Good","United Kingdom",5171388,50.74,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.131",88,"562.23804","Escherichia coli O25:H4 strain ECO0912","Good","United Kingdom",5076055,50.79,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.131",137,"562.23832","Escherichia coli O25:H4 strain ECO1223","Good","United Kingdom",5169171,50.7,"Human, Homo sapiens",2008,NA,"Human"
+"MLST.ecoli_achtman_4.12",94,"562.23834","Escherichia coli O4:H1 strain ECO1412","Good","United Kingdom",5085689,50.55,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.95",92,"562.23846","Escherichia coli O2:H4 strain ECO1455","Good","United Kingdom",4943492,50.58,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.69",164,"562.23866","Escherichia coli NA:H18 strain ECO0379","Good","United Kingdom",5420388,50.62,"Human, Homo sapiens",2012,NA,"Human"
+"MLST.ecoli_achtman_4.73",105,"562.23871","Escherichia coli O6:H1 strain ECO1391","Good","United Kingdom",4979947,50.44,"Human, Homo sapiens",2010,NA,"Human"
+"MLST.ecoli_achtman_4.131",87,"562.23874","Escherichia coli O25:H4 strain ECO0909","Good","United Kingdom",5071742,50.79,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.1155",69,"562.23877","Escherichia coli O39:H4 strain ECO0862","Good","United Kingdom",4978689,50.54,"Human, Homo sapiens",2005,NA,"Human"
+"MLST.ecoli_achtman_4.69",150,"562.23893","Escherichia coli O17:H18 strain ECO1328","Good","United Kingdom",5292087,50.73,"Human, Homo sapiens",2009,NA,"Human"
+"MLST.ecoli_achtman_4.394",102,"562.23898","Escherichia coli O17:H18 strain ECO1468","Good","United Kingdom",5043503,50.31,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.131",106,"562.23911","Escherichia coli O25:H4 strain ECO1500","Good","United Kingdom",5116775,50.82,"Human, Homo sapiens",2011,NA,"Human"
+"MLST.ecoli_achtman_4.8150",6,"562.28435","Escherichia coli strain AR_0369","Good",NA,4919661,50.56074,NA,NA,NA,NA
+"MLST.ecoli_achtman_4.131",115,"562.42638","Escherichia coli strain 137","Good","USA",4884529,50.82646,"Human, Homo sapiens",2015,"urine","Human"
+"MLST.ecoli_achtman_4.131",119,"562.42645","Escherichia coli strain 144","Good","USA",5113561,50.717827,"Human, Homo sapiens",2015,"urine","Human"
+"MLST.ecoli_achtman_4.6480",132,"562.42648","Escherichia coli strain 149","Good","USA",5168912,50.612125,"Human, Homo sapiens",2015,"urine","Human"
+"MLST.ecoli_achtman_4.167",142,"562.42654","Escherichia coli strain 159","Good","USA",4855720,50.813496,"Human, Homo sapiens",2015,"urine","Human"
+"MLST.ecoli_achtman_4.2772",62,"562.42656","Escherichia coli strain 162","Good","USA",4795929,50.80194,"Human, Homo sapiens",2015,"urine","Human"
+"MLST.ecoli_achtman_4.131",152,"562.42667","Escherichia coli strain 195","Good","USA",5437160,50.6028,"Human, Homo sapiens",2016,"urine","Human"
+"MLST.ecoli_achtman_4.410",157,"562.42680","Escherichia coli strain 223","Good","USA",4941247,50.551884,"Human, Homo sapiens",2016,"abscess","Human"
+"MLST.ecoli_achtman_4.131",199,"562.42683","Escherichia coli strain 235","Good","USA",5230361,50.653847,"Human, Homo sapiens",2016,"urine","Human"
+"MLST.ecoli_achtman_4.648",178,"562.42689","Escherichia coli strain 243","Good","USA",5393927,50.40869,"Human, Homo sapiens",2016,"urine","Human"
+"MLST.ecoli_achtman_4.131",166,"562.42695","Escherichia coli strain 257","Good","USA",5217703,50.71793,"Human, Homo sapiens",2016,"urine","Human"
+"MLST.ecoli_achtman_4.131",223,"562.42772","Escherichia coli strain M18","Good","USA",5347344,50.580654,"Human, Homo sapiens",2015,"blood","Human"
+"MLST.ecoli_achtman_4.744",142,"562.42774","Escherichia coli strain M2","Good","USA",4757119,50.66596,"Human, Homo sapiens",2015,"blood","Human"
+"MLST.ecoli_achtman_4.131",225,"562.42789","Escherichia coli strain M34","Good","USA",5259600,50.831375,"Human, Homo sapiens",2014,"blood","Human"
+"MLST.ecoli_achtman_4.131",98,"562.42790","Escherichia coli strain M35","Good","USA",5180322,50.78528,"Human, Homo sapiens",2014,"blood","Human"
+"MLST.ecoli_achtman_4.131",219,"562.42805","Escherichia coli strain M45","Good","USA",5261304,50.830498,"Human, Homo sapiens",2014,"blood","Human"
+"MLST.cfreundii.583",69,"562.42818","Escherichia coli strain M8","Good","USA",5136397,51.915203,"Human, Homo sapiens",2015,"blood","Human"
+"MLST.ecoli_achtman_4.131",196,"562.42823","Escherichia coli strain MUGSI_132","Good","USA",5331204,50.73199,"Human, Homo sapiens",2014,"Urine","Human"
+"MLST.ecoli_achtman_4.410",103,"562.42830","Escherichia coli strain MUGSI_154","Good","USA",4815174,50.578857,"Human, Homo sapiens",2014,"Urine","Human"
+"MLST.ecoli_achtman_4.410",136,"562.42843","Escherichia coli strain MUGSI_226","Good","USA",5102847,50.603577,"Human, Homo sapiens",2014,"Urine","Human"
+"MLST.ecoli_achtman_4.1193",103,"562.42848","Escherichia coli strain MUGSI_247","Good","USA",5116121,50.558323,"Human, Homo sapiens",2014,"Urine","Human"
+"MLST.ecoli_achtman_4.131",87,"562.42855","Escherichia coli strain MUGSI_258","Good","USA",5052087,50.84491,"Human, Homo sapiens",2014,"Urine","Human"
+"MLST.ecoli_achtman_4.131",208,"562.42859","Escherichia coli strain MUGSI_278","Good","USA",5252910,50.743702,"Human, Homo sapiens",2013,"Urine","Human"
+"MLST.ecoli_achtman_4.1386",125,"562.42871","Escherichia coli strain MUGSI_9","Good","USA",5247833,50.45456,"Human, Homo sapiens",2012,"Urine","Human"
+"MLST.ecoli_achtman_4.1193",1,"562.45398","Escherichia coli strain BR14-DEC","Good","Brazil",5110451,50.631485,"Human, Homo sapiens",2015,"urine","Human"
+"MLST.ecoli_achtman_4.6812",165,"562.45594","Escherichia coli strain EC_76","Good","Pakistan",4902401,50.466064,"Chicken, Gallus gallus",2016,"infection","Avian"
+"MLST.ecoli_achtman_4.117",132,"562.45604","Escherichia coli strain EC_73","Good","Pakistan",5048030,50.675156,"Chicken, Gallus gallus",2016,"infection","Avian"
+"MLST.ecoli_achtman_4.155",119,"562.45609","Escherichia coli strain EC_71","Good","Pakistan",5118176,50.48193,"Chicken, Gallus gallus",2016,"infection","Avian"
+"MLST.ecoli_achtman_4.11404",144,"562.45616","Escherichia coli strain EC_54","Good","Pakistan",5054500,50.531757,"Chicken, Gallus gallus",2016,"infection","Avian"
+"MLST.ecoli_achtman_4.48",160,"562.45625","Escherichia coli strain EC_34_B","Good","Pakistan",5010395,50.51452,"Chicken, Gallus gallus",2016,"infection","Avian"
+"MLST.ecoli_achtman_4.1724",99,"562.45633","Escherichia coli strain EC_23","Good","Pakistan",5211642,50.27387,"Chicken, Gallus gallus",2016,"infection","Avian"
+"MLST.ecoli_achtman_4.2973",125,"562.45646","Escherichia coli strain EC_26","Good","Pakistan",5313251,50.397007,"Chicken, Gallus gallus",2016,"infection","Avian"
+"MLST.ecoli_achtman_4.1564",162,"562.45647","Escherichia coli strain EC_34_A","Good","Pakistan",5009844,50.738026,"Chicken, Gallus gallus",2016,"infection","Avian"
+"MLST.ecoli_achtman_4.117",137,"562.45666","Escherichia coli strain EC_35_B","Good","Pakistan",5189000,50.680286,"Chicken, Gallus gallus",2016,"infection","Avian"
+"MLST.ecoli_achtman_4.420",441,"562.56829","Escherichia coli strain 489-16","Good","Germany",5521655,50.289112,"Chicken",2012,"chicken","Avian"
+"MLST.ecoli_achtman_4.1196",356,"562.56845","Escherichia coli strain 509-16","Good","Germany",5269495,50.524853,"Pig",2011,"pig","Nonhuman Mammal"
+"MLST.ecoli_achtman_4.131",55,"562.57088","Escherichia coli strain 24742_1#5","Good",NA,5093852,50.816654,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.1973",149,"562.57093","Escherichia coli strain 24742_1#278","Good",NA,4851304,50.64721,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.10",155,"562.57099","Escherichia coli strain 24742_1#15","Good",NA,4592016,50.68978,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.1973",385,"562.57102","Escherichia coli strain 24742_1#16","Good",NA,4989034,50.649487,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.4598",95,"562.57108","Escherichia coli strain 24742_1#286","Good",NA,5168051,50.71457,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.2350",57,"562.57125","Escherichia coli strain 24742_1#25","Good",NA,4675868,50.756054,NA,NA,NA,NA
+"MLST.ecoli_achtman_4.678",111,"562.57130","Escherichia coli strain 24742_1#58","Good",NA,5275633,50.666695,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.641",57,"562.57138","Escherichia coli strain 24742_1#307","Good",NA,4832375,50.50243,NA,NA,NA,NA
+"MLST.ecoli_achtman_4.448",106,"562.57168","Escherichia coli strain 24742_1#142","Good",NA,5082296,50.806953,NA,NA,NA,NA
+"MLST.ecoli_achtman_4.12",90,"562.57169","Escherichia coli strain 24742_1#326","Good",NA,5250591,50.369125,NA,NA,NA,NA
+"MLST.ecoli_achtman_4.10",85,"562.7566","Escherichia coli strain 602370_aEPEC","Good","Bangladesh",4744889,50.5,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.5488",158,"562.7567","Escherichia coli strain 100554_aEPEC","Good","Gambia",5509046,50.43,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.5339",69,"562.7568","Escherichia coli strain 505393_aEPEC","Good","India",4625923,50.56,"Human, Homo sapiens",2010,"faeces","Human"
+"MLST.ecoli_achtman_4.517",168,"562.7569","Escherichia coli strain 401117_aEPEC","Good","Kenya",5021415,50.61,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.40",146,"562.7570","Escherichia coli strain 200456_aEPEC","Good","Mali",4925653,50.55,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.5426",140,"562.7579","Escherichia coli strain 100269_aEPEC","Good","Gambia",5109276,50.48,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.10",94,"562.7582","Escherichia coli strain 202973_aEPEC","Good","Mali",4742618,50.5,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.517",144,"562.7617","Escherichia coli strain 202453_aEPEC","Good","Mali",5127015,50.61,"Human, Homo sapiens",2009,"faeces","Human"
+NA,20,"562.7621","Escherichia coli strain 402837","Poor","Kenya",3548035,50.57,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.328",176,"562.7623","Escherichia coli strain 703258_aEPEC","Good","Pakistan",5047485,50.6,"Human, Homo sapiens",2010,"faeces","Human"
+"MLST.ecoli_achtman_4.328",118,"562.7624","Escherichia coli strain 302082","Good","Mozambique",5049654,50.62,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.328",143,"562.7636","Escherichia coli strain 204263_aEPEC","Good","Mali",5215348,50.54,"Human, Homo sapiens",2010,"faeces","Human"
+"MLST.ecoli_achtman_4.301",213,"562.7637","Escherichia coli strain 201488_aEPEC","Good","Mali",5148303,50.65,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.10",101,"562.7643","Escherichia coli strain 102010_aEPEC","Good","Gambia",4736586,50.5,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.34",163,"562.7645","Escherichia coli strain 204302_aEPEC","Good","Mali",4874460,50.8,"Human, Homo sapiens",2010,"faeces","Human"
+"MLST.ecoli_achtman_4.5426",154,"562.7646","Escherichia coli strain 201214_aEPEC","Good","Mali",5098885,50.47,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.5353",102,"562.7649","Escherichia coli strain 302700","Good","Mozambique",4855592,50.4,"Human, Homo sapiens",2009,"faeces","Human"
+NA,10,"562.7654","Escherichia coli strain 402798","Poor","Kenya",2442032,50.71,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.517",145,"562.7658","Escherichia coli strain 202374","Good","Mali",5129442,50.59,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.301",220,"562.7663","Escherichia coli strain 402794","Good","Kenya",5065919,50.66,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.382",134,"562.7665","Escherichia coli strain 302613","Good","Mozambique",4965260,50.7,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.517",162,"562.7670","Escherichia coli strain 202443_aEPEC","Good","Mali",5096946,50.52,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.378",262,"562.7678","Escherichia coli strain R402077","Good","Kenya",5091798,50.5,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.29",327,"562.7685","Escherichia coli strain 403308_aEPEC","Good","Kenya",5093020,50.48,"Human, Homo sapiens",2010,"faeces","Human"
+"MLST.ecoli_achtman_4.803",57,"562.7696","Escherichia coli strain 504225_aEPEC","Good","India",4796697,50.67,"Human, Homo sapiens",2010,"faeces","Human"
+"MLST.ecoli_achtman_4.29",256,"562.7705","Escherichia coli strain 400897_aEPEC","Good","Kenya",5141198,50.54,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.10",136,"562.7727","Escherichia coli strain 200439_aEPEC","Good","Mali",4841256,50.5,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.381",200,"562.7734","Escherichia coli strain R302583-2A","Good","Mozambique",5300706,50.49,"Human, Homo sapiens",NA,"faeces","Human"
+"MLST.ecoli_achtman_4.5241",150,"562.7744","Escherichia coli strain G504540","Good","India",5072005,50.59,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.121",138,"562.7745","Escherichia coli strain 402767","Good","Kenya",5226573,50.42,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.34",208,"562.7757","Escherichia coli strain 402617","Good","Kenya",4893258,50.83,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.121",153,"562.7760","Escherichia coli strain 402480_aEPEC","Good","Kenya",5236421,50.42,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.29",281,"562.7767","Escherichia coli strain 503947_aEPEC","Good","India",5267507,50.68,"Human, Homo sapiens",2009,"faeces","Human"
+NA,3,"562.7773","Escherichia coli strain 402605","Poor","Kenya",957497,50.2,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.301",205,"562.7775","Escherichia coli strain G603423","Good","Bangladesh",5120183,50.46,"Human, Homo sapiens",2010,"faeces","Human"
+"MLST.ecoli_achtman_4.29",278,"562.7780","Escherichia coli strain 300086_aEPEC","Good","Mozambique",5216908,50.65,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.29",281,"562.7782","Escherichia coli strain 500094","Good","India",5231302,50.66,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.5445",28,"562.7783","Escherichia coli strain 100600_aEPEC","Good","Gambia",4787944,50.66,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.2678",44,"562.7784","Escherichia coli strain 703108","Good","Pakistan",4783406,50.54,"Human, Homo sapiens",2010,"faeces","Human"
+"MLST.ecoli_achtman_4.5480",270,"562.7785","Escherichia coli strain 302619","Good","Mozambique",5169407,50.41,"Human, Homo sapiens",2009,"faeces","Human"
+"MLST.ecoli_achtman_4.5251",200,"562.7786","Escherichia coli strain G401529","Good","Kenya",5208687,50.6,"Human, Homo sapiens",2008,"faeces","Human"
+"MLST.ecoli_achtman_4.443",157,"562.96427","Escherichia coli VRES0699","Good","England",5140440,50.73134,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7091",174,"562.96430","Escherichia coli VREC0654","Good","England",4898738,50.75195,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.443",156,"562.96433","Escherichia coli VRES0694","Good","England",5139863,50.73102,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7091",182,"562.96434","Escherichia coli VREC0655","Good","England",4868220,50.75391,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7101",131,"562.96437","Escherichia coli VREC0652","Good","England",4721422,50.593254,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",180,"562.96441","Escherichia coli VRES0706","Good","England",5195294,50.688103,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.212",115,"562.96456","Escherichia coli VREC0660","Good","England",4842044,50.784916,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",188,"562.96457","Escherichia coli VRES0703","Good","England",5187972,50.689037,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",123,"562.96487","Escherichia coli VREC0696","Good","England",5164004,50.76055,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.3202",160,"562.96501","Escherichia coli VREC0688","Good","England",4617661,50.975636,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",129,"562.96510","Escherichia coli VRES0748","Good","England",5163876,50.754936,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",154,"562.96522","Escherichia coli VRES0742","Good","England",5155618,50.753258,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.10",82,"562.96537","Escherichia coli VREC0729","Good","England",4634303,50.659225,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.69",136,"562.96543","Escherichia coli VREC0718","Good","England",5119315,50.61974,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1196",124,"562.96544","Escherichia coli VREC0724","Good","England",5131423,50.74224,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.10",60,"562.96569","Escherichia coli VREC0754","Good","England",4538159,50.721825,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.635",187,"562.96581","Escherichia coli VREC0762","Good","England",4979437,50.48424,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.4959",137,"562.96593","Escherichia coli VREC0771","Good","England",4615130,50.807083,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1196",113,"562.96594","Escherichia coli VREC0775","Good","England",5079586,50.74575,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7095",219,"562.96605","Escherichia coli VREC0784","Good","England",4991231,50.733818,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7095",220,"562.96611","Escherichia coli VREC0781","Good","England",4991713,50.732304,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1196",116,"562.96613","Escherichia coli VREC0778","Good","England",5076113,50.7444,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.48",251,"562.96626","Escherichia coli VREC0814","Good","England",5136097,50.694447,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1297",168,"562.96641","Escherichia coli VREC0835","Good","England",5011192,50.865524,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.648",128,"562.96654","Escherichia coli VREC0853","Good","England",5087153,50.482204,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.6151",195,"562.96661","Escherichia coli VREC0841","Good","England",5042446,50.790825,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",71,"562.96672","Escherichia coli VREC0860","Good","England",4916429,50.836185,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1193",108,"562.96696","Escherichia coli VREC0872","Good","England",5203348,50.424362,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1193",112,"562.96711","Escherichia coli VRES0917","Good","England",5201515,50.42408,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1193",124,"562.96712","Escherichia coli VRES0916","Good","England",5192585,50.423557,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.69",190,"562.96714","Escherichia coli VRES0873","Good","England",5251865,50.69258,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.69",183,"562.96724","Escherichia coli VRES0868","Good","England",5248115,50.690716,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",106,"562.96735","Escherichia coli VREC0884","Good","England",5088561,50.69117,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.10",94,"562.96749","Escherichia coli VREC0896","Good","England",4714149,50.84275,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.448",83,"562.96763","Escherichia coli VREC0913","Good","England",4876523,50.746895,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.443",193,"562.96783","Escherichia coli VRES0984","Good","England",5264980,50.628834,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.443",197,"562.96786","Escherichia coli VREC0927","Good","England",5316815,50.585133,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",119,"562.96793","Escherichia coli VREC0930","Good","England",4950249,50.78617,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.73",126,"562.96804","Escherichia coli VREC0942","Good","England",5124358,50.43695,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.73",111,"562.96810","Escherichia coli VREC0940","Good","England",5133843,50.44562,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7102",123,"562.96826","Escherichia coli VREC0962","Good","England",5106641,50.372623,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1193",120,"562.96833","Escherichia coli VREC0953","Good","England",5086122,50.605846,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.38",168,"562.96844","Escherichia coli VREC0977","Good","England",5202323,50.390682,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.336",104,"562.96858","Escherichia coli VREC0989","Good","England",4680588,50.718285,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.336",102,"562.96859","Escherichia coli VREC0990","Good","England",4679776,50.715164,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.155",81,"562.96865","Escherichia coli VREC0997","Good","England",4836936,50.761784,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7102",124,"562.96888","Escherichia coli VREC1005","Good","England",5106934,50.37367,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.155",80,"562.96914","Escherichia coli VREC1011","Good","England",4837667,50.763126,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.162",90,"562.96915","Escherichia coli VREC1024","Good","England",4972109,50.657238,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.2006",89,"562.96937","Escherichia coli VRES1616","Good","England",4919653,50.912636,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.409",153,"562.96962","Escherichia coli VREC1054","Good","England",4836856,50.91084,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.409",138,"562.96968","Escherichia coli VREC1056","Good","England",4820778,50.843952,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.648",286,"562.97004","Escherichia coli VRES1156","Good","England",5428012,50.262177,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.2598",126,"562.97011","Escherichia coli VREC1118","Good","England",4904112,50.642605,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.58",140,"562.97019","Escherichia coli VREC1122","Good","England",5059910,50.692978,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.164",116,"562.97037","Escherichia coli VREC1157","Good","England",5012050,50.633553,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1196",147,"562.97059","Escherichia coli VREC1182","Good","England",5115334,50.720695,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",128,"562.97071","Escherichia coli VRES1309","Good","England",5226264,50.63835,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",115,"562.97074","Escherichia coli VRES1304","Good","England",5224919,50.632153,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.648",64,"562.97113","Escherichia coli VREC1209","Good","England",4848291,50.457985,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.69",107,"562.97154","Escherichia coli VREC1295","Good","England",4986421,50.618107,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.443",149,"562.97165","Escherichia coli VRES1381","Good","England",5157208,50.69373,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.95",120,"562.97190","Escherichia coli VREC1316","Good","England",5049972,50.51002,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.69",115,"562.97206","Escherichia coli VREC1352","Good","England",5024875,50.54241,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7100",99,"562.97212","Escherichia coli VREC1370","Good","England",4818324,50.5912,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7095",204,"562.97219","Escherichia coli VREC1390","Good","England",4956900,50.602997,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.443",186,"562.97228","Escherichia coli VRES1432","Good","England",5125473,50.655735,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.443",145,"562.97231","Escherichia coli VREC1386","Good","England",5161549,50.694122,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.7094",134,"562.97234","Escherichia coli VREC1635","Good","England",4992805,50.827282,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.10",113,"562.57173","Escherichia coli strain 24742_1#145","Good",NA,4857707,50.738243,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.34",169,"562.57201","Escherichia coli strain 24742_1#343","Good",NA,5089971,50.604305,NA,1970,NA,NA
+"MLST.Escherichia_coli_2.39",224,"562.57229","Escherichia coli strain 24742_1#188","Good",NA,5050659,50.49564,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.88",82,"562.57234","Escherichia coli strain 24742_1#196","Good",NA,5321778,50.734093,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.131",81,"562.57248","Escherichia coli strain 24742_1#354","Good",NA,5235840,50.80942,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.131",118,"562.57274","Escherichia coli strain 24742_1#360","Good",NA,5292057,50.768726,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.405",112,"562.57285","Escherichia coli strain 24742_1#364","Good",NA,5244584,50.657993,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.73",98,"562.57311","Escherichia coli strain 24742_1#258","Good",NA,5223716,50.53364,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.69",98,"562.57323","Escherichia coli strain 24742_1#246","Good",NA,5194562,50.606754,NA,2017,NA,NA
+"MLST.ecoli_achtman_4.95",181,"562.57364","Escherichia coli strain PB320","Good","Thailand",5474456,50.398434,"Human, Homo sapiens",2015,"Blood","Human"
+"MLST.ecoli_achtman_4.542",196,"562.57383","Escherichia coli strain W1_1_2_ERB1","Good","Thailand",4964139,50.58031,NA,2015,"Canal",NA
+"MLST.ecoli_achtman_4.6622",150,"562.57385","Escherichia coli strain W1_10_ERB1","Good","Thailand",4919249,50.513218,NA,2015,"Canal",NA
+"MLST.ecoli_achtman_4.218",119,"562.57389","Escherichia coli strain W1_5_ERP10B","Good","Thailand",4781138,50.753105,NA,2015,"Canal",NA
+"MLST.ecoli_achtman_4.101",128,"562.57391","Escherichia coli strain W1_4_ERB5","Good","Thailand",4794888,50.725315,NA,2015,"Canal",NA
+"MLST.ecoli_achtman_4.410",117,"562.57412","Escherichia coli strain W2_11_ERB9","Good","Thailand",4906905,50.54418,NA,2015,"Canal",NA
+"MLST.ecoli_achtman_4.165",112,"562.57433","Escherichia coli strain W2_6_ERG5","Good","Thailand",4760716,50.81175,NA,2015,"Canal",NA
+"MLST.ecoli_achtman_4.457",134,"562.57447","Escherichia coli strain PB185","Good","Thailand",5145397,50.509357,"Human, Homo sapiens",2015,"Pus","Human"
+"MLST.ecoli_achtman_4.131",212,"562.57457","Escherichia coli strain PB251","Good","Thailand",5170267,50.5453,"Human, Homo sapiens",2015,"Pus","Human"
+"MLST.ecoli_achtman_4.410",104,"562.57458","Escherichia coli strain PB207","Good","Thailand",4930941,50.508472,"Human, Homo sapiens",2015,"Pus","Human"
+"MLST.ecoli_achtman_4.457",187,"562.57472","Escherichia coli strain PB1","Good","Thailand",5267470,50.25513,"Human, Homo sapiens",2015,"Urine","Human"
+"MLST.ecoli_achtman_4.5941",99,"562.57489","Escherichia coli strain PB317","Good","Thailand",5023682,50.747,"Human, Homo sapiens",2015,"Urine","Human"
+"MLST.ecoli_achtman_4.131",145,"562.57492","Escherichia coli strain PB239","Good","Thailand",5200424,50.692,"Human, Homo sapiens",2015,"Urine","Human"
+"MLST.ecoli_achtman_4.73",146,"562.58647","Escherichia coli strain WU40","Good","USA",4870252,50.66349,"Human, Homo sapiens",NA,NA,"Human"
+"MLST.ecoli_achtman_4.1086",142,"562.58718","Escherichia coli strain 14062120","Good","Italy",5365159,50.25193,"Turkey, Meleagris gallopavo",2014,"Slaughterhouse","Avian"
+"MLST.ecoli_achtman_4.359",182,"562.58728","Escherichia coli strain 14087995","Good","Italy",5127901,50.54372,"Turkey, Meleagris gallopavo",2014,"Slaughterhouse","Avian"
+"MLST.ecoli_achtman_4.5708",174,"562.58738","Escherichia coli strain 15078696","Good","Italy",4560579,50.973877,"Bos taurus",2015,"Slaughterhouse","Nonhuman Mammal"
+"MLST.ecoli_achtman_4.156",156,"562.58748","Escherichia coli strain 112","Good","Norway",5117742,50.457195,"Human, Homo sapiens",2006,NA,"Human"
+NA,214,"562.58753","Escherichia coli strain 113","Good","Norway",4420089,50.854767,"Human, Homo sapiens",2006,NA,"Human"
+"MLST.ecoli_achtman_4.6438",195,"562.58755","Escherichia coli strain 117","Good","Norway",4988687,50.71226,"Human, Homo sapiens",2007,NA,"Human"
+"MLST.ecoli_achtman_4.212",91,"562.58770","Escherichia coli strain ENV66","Good","Singapore",4959074,50.53732,NA,2010,"Duck rice",NA
+"MLST.ecoli_achtman_4.10",100,"562.58781","Escherichia coli strain ENV316","Good","Singapore",4866590,50.67532,NA,2011,"Duck rice",NA
+"MLST.ecoli_achtman_4.155",96,"562.58784","Escherichia coli strain ENV326","Good","Singapore",4959428,50.669514,NA,2011,"Chicken nasi briyani",NA
+"MLST.ecoli_achtman_4.7210",99,"562.58785","Escherichia coli strain ENV388","Good","Singapore",5008742,50.86756,NA,2010,"Duck rice",NA
+"MLST.ecoli_achtman_4.193",138,"562.58786","Escherichia coli strain ENV463","Good","Singapore",4773875,50.812977,NA,2011,"Chicken nasi briyani",NA
+"MLST.ecoli_achtman_4.1146",68,"562.58788","Escherichia coli strain ENV665","Good","Singapore",4812658,50.7067,NA,2013,"Chicken kebab",NA
+"MLST.ecoli_achtman_4.5474",157,"562.59223","Escherichia coli strain PBIO711","Good","Rwanda",4926538,50.376938,"House fly, Musca domestica",2014,"tertiary hospital, kitchen",NA
+"MLST.ecoli_achtman_4.90",147,"562.65786","Escherichia coli strain CFS0347","Good","United Kingdom",4997862,50.757965,"Bos taurus",2007,NA,"Nonhuman Mammal"
+"MLST.ecoli_achtman_4.410",117,"562.65796","Escherichia coli strain 123074","Good","Germany",4822617,50.596573,"Bos taurus",NA,"Gut","Nonhuman Mammal"
+"MLST.ecoli_achtman_4.410",90,"562.65803","Escherichia coli strain R107","Good","Germany",4757388,50.631775,NA,NA,"Sock swabs, dairy cattle farm",NA
+"MLST.ecoli_achtman_4.6332",166,"562.65816","Escherichia coli strain V210","Good","Germany",4874026,50.645687,"Cat, Felis catus",NA,NA,"Nonhuman Mammal"
+"MLST.ecoli_achtman_4.409",167,"562.97261","Escherichia coli VREC1392","Good","England",4915483,50.817875,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.69",170,"562.97282","Escherichia coli VREC1417","Good","England",5076370,50.66802,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",197,"562.97292","Escherichia coli VREC1087","Good","England",5417775,50.70039,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",107,"562.97305","Escherichia coli VRES1507","Good","England",4978866,50.732094,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.59",304,"562.97358","Escherichia coli VREC1480","Good","England",5221018,50.509056,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1193",100,"562.97361","Escherichia coli VREC1478","Good","England",5025061,50.60038,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.58",136,"562.97369","Escherichia coli VREC1486","Good","England",4888232,50.57806,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.421",153,"562.97378","Escherichia coli VREC1494","Good","England",5178023,50.582626,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.58",116,"562.97383","Escherichia coli VREC1505","Good","England",4898243,50.59147,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",108,"562.97402","Escherichia coli VREC1519","Good","England",4988358,50.651337,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.3006",162,"562.97458","Escherichia coli VRES1589","Good","England",5082838,50.490177,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",99,"562.97463","Escherichia coli VRES1463","Good","England",4979924,50.732,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",201,"562.97466","Escherichia coli VREC1088","Good","England",5412483,50.696583,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.357",90,"562.97472","Escherichia coli VREC1595","Good","England",4992683,50.456318,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",100,"562.97477","Escherichia coli VRES1466","Good","England",4979839,50.732643,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.131",105,"562.97479","Escherichia coli VRES1471","Good","England",4973883,50.731228,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.1193",109,"562.97509","Escherichia coli VREC1239","Good","England",5026494,50.6042,"Human, Homo sapiens",NA,NA,NA
+"MLST.ecoli_achtman_4.12",92,"562.97750","Escherichia coli 8311f8da-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5034246,50.44527,NA,2002,NA,NA
+"MLST.ecoli_achtman_4.162",68,"562.97753","Escherichia coli 8155e15a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4930778,50.74118,NA,2002,NA,NA
+"MLST.ecoli_achtman_4.95",72,"562.97755","Escherichia coli 83f3f618-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5128639,50.539646,NA,2002,NA,NA
+"MLST.ecoli_achtman_4.59",269,"562.97770","Escherichia coli d55a34a4-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5307345,50.585087,NA,2002,NA,NA
+"MLST.ecoli_achtman_4.106",140,"562.97806","Escherichia coli 824574fe-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5141826,50.41452,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.12",48,"562.97810","Escherichia coli 43229e0e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4913840,50.574966,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.372",157,"562.97835","Escherichia coli 2b68075e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5306076,50.40787,NA,2002,NA,NA
+"MLST.ecoli_achtman_4.95",66,"562.97851","Escherichia coli b0c1173e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5162956,50.536533,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.95",124,"562.97863","Escherichia coli d49bf1ec-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5250910,50.665123,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.9135",79,"562.97867","Escherichia coli 0b5918a4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4723900,50.674507,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.95",95,"562.97871","Escherichia coli ccce4f64-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5044493,50.67643,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.95",87,"562.97879","Escherichia coli a226c232-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5123802,50.488525,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.80",142,"562.97893","Escherichia coli a3c5591e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5158777,50.257763,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.73",152,"562.97929","Escherichia coli 4822ee7c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5196307,50.419094,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.69",94,"562.97937","Escherichia coli 4e1d395e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5149204,50.68024,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.69",131,"562.97943","Escherichia coli 818ba790-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5230151,50.69806,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.73",156,"562.97953","Escherichia coli cdc49658-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5132160,50.49897,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.963",86,"562.97956","Escherichia coli 2f8ae158-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4835190,50.703487,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.73",101,"562.97959","Escherichia coli 509ff086-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5002563,50.495735,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.73",106,"562.97962","Escherichia coli 6466b96a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5155139,50.490917,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.106",123,"562.97964","Escherichia coli 638e80cc-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5289108,50.506454,NA,2003,NA,NA
+"MLST.ecoli_achtman_4.73",169,"562.97984","Escherichia coli 16318cac-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5137240,50.352016,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.357",30,"562.97991","Escherichia coli 0c82216c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4895117,50.464085,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.131",25,"562.98017","Escherichia coli 852e5b94-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4781062,50.67753,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.12",77,"562.98022","Escherichia coli 885d5b4e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4978439,50.485966,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.95",125,"562.98036","Escherichia coli e37e1d38-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4976578,50.6446,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.12",83,"562.98056","Escherichia coli 32651c36-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5146593,50.42157,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.73",81,"562.98065","Escherichia coli 468ca7a6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5033877,50.537308,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.963",111,"562.98068","Escherichia coli 6b54f73c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5039269,50.599087,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.409",210,"562.98074","Escherichia coli 68b67e2e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4875424,50.7956,NA,2004,NA,NA
+"MLST.ecoli_achtman_4.69",102,"562.98079","Escherichia coli bc53856e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5247831,50.71581,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.12",136,"562.98081","Escherichia coli 7da82360-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5187524,50.417328,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.635",221,"562.98083","Escherichia coli 7ccd4ff6-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4891852,50.741436,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.393",80,"562.98087","Escherichia coli cd0326f8-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5128702,50.587128,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.10",259,"562.98120","Escherichia coli 0f1b91ba-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5340965,50.68217,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.58",81,"562.98122","Escherichia coli 0ab8e7da-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4697243,50.603874,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.38",202,"562.98143","Escherichia coli 87c376e6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5332990,50.348774,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.95",188,"562.98144","Escherichia coli 99a5fdd0-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5192378,50.564693,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.131",66,"562.98158","Escherichia coli 8e0957be-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5162694,50.58514,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.131",99,"562.98161","Escherichia coli 86d9e800-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5176622,50.582756,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.131",43,"562.98173","Escherichia coli 49fedba2-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4979530,50.61076,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.349",119,"562.98180","Escherichia coli 3539a490-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4822363,50.660248,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.10",100,"562.98183","Escherichia coli 55d55884-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4766026,50.453773,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.127",80,"562.98186","Escherichia coli 736a0872-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4933278,50.52977,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.95",76,"562.98187","Escherichia coli 6639c61a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4997837,50.520996,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.73",139,"562.98188","Escherichia coli 31ba8ee2-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5139197,50.319515,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.393",68,"562.98199","Escherichia coli 4e54182a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4987441,50.596928,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.69",160,"562.98200","Escherichia coli 4f2ecf42-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5299004,50.64129,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.393",82,"562.98219","Escherichia coli 71ada43a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5244212,50.567024,NA,2005,NA,NA
+"MLST.ecoli_achtman_4.646",100,"562.98226","Escherichia coli baa18090-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5085003,50.50632,NA,2006,NA,NA
+"MLST.ecoli_achtman_4.69",122,"562.98249","Escherichia coli 0cc55e28-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5171586,50.748455,NA,2006,NA,NA
+"MLST.ecoli_achtman_4.141",100,"562.98265","Escherichia coli af48bd8a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5046590,50.444973,NA,2006,NA,NA
+"MLST.ecoli_achtman_4.73",134,"562.98266","Escherichia coli b0161ee2-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5113345,50.51787,NA,2006,NA,NA
+"MLST.ecoli_achtman_4.550",127,"562.98270","Escherichia coli 8890e1e4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5080144,50.60412,NA,2006,NA,NA
+"MLST.ecoli_achtman_4.1882",94,"562.98278","Escherichia coli 8a2f5148-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4897878,50.585377,NA,2006,NA,NA
+"MLST.ecoli_achtman_4.73",103,"562.98320","Escherichia coli 68d2082e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5082804,50.48967,NA,2006,NA,NA
+"MLST.ecoli_achtman_4.973",62,"562.98329","Escherichia coli 71c7c612-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4657984,50.708717,NA,2006,NA,NA
+"MLST.ecoli_achtman_4.10",101,"562.98344","Escherichia coli df4a99cc-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4663793,50.724014,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.10",95,"562.98348","Escherichia coli 451b6df8-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4623554,50.630123,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.135",51,"562.98350","Escherichia coli b10cb108-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4715059,50.628124,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.88",116,"562.98362","Escherichia coli da1ee8f4-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5083609,50.588116,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.73",111,"562.98365","Escherichia coli 18d98ebe-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5079232,50.429947,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.95",100,"562.98378","Escherichia coli b1e5ccea-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5085495,50.616352,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.10296",54,"562.98381","Escherichia coli d6baf798-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4954206,50.750412,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.106",95,"562.98385","Escherichia coli 12e72b1a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5162442,50.541565,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.141",101,"562.98396","Escherichia coli bc034004-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5024529,50.574192,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.46",120,"562.98398","Escherichia coli 42980b04-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4570335,50.740658,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.73",143,"562.98403","Escherichia coli 96392064-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5130843,50.507217,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.95",139,"562.98416","Escherichia coli cd4f35f6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5167528,50.644814,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.95",130,"562.98435","Escherichia coli 9dc00ee6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5220021,50.66179,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.73",111,"562.98439","Escherichia coli 2e884fac-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5159720,50.564022,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.550",145,"562.98444","Escherichia coli 6a2bb2b0-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5121389,50.367313,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.95",118,"562.98450","Escherichia coli 6b05902a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5008067,50.55096,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.69",126,"562.98456","Escherichia coli 9aa2a322-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5139098,50.55967,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.421",178,"562.98461","Escherichia coli 63c20758-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5130085,50.490215,NA,2007,NA,NA
+"MLST.ecoli_achtman_4.130",215,"562.98490","Escherichia coli 7dc1e52a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5746287,50.39014,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.127",118,"562.98493","Escherichia coli bdbe163a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5110379,50.42896,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.73",109,"562.98500","Escherichia coli b3d88696-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5155575,50.49076,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.1155",62,"562.98504","Escherichia coli da6c32da-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4960984,50.52393,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.12",183,"562.98514","Escherichia coli dbf89792-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5267092,50.436142,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.550",124,"562.98519","Escherichia coli b3085516-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5227964,50.611004,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.79",143,"562.98520","Escherichia coli b321ed00-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4941231,50.61087,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.95",68,"562.98522","Escherichia coli 181ae914-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5058631,50.561386,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.73",100,"562.98530","Escherichia coli 18f4b13a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4996509,50.524418,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.127",112,"562.98554","Escherichia coli af7d528e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5153081,50.490513,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.1819",75,"562.98564","Escherichia coli 99034bb6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5016208,50.65065,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.550",89,"562.98577","Escherichia coli 34aaa9de-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5015778,50.689266,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.88",155,"562.98588","Escherichia coli 50edafa6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4938031,50.79231,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.393",81,"562.98598","Escherichia coli 73b21658-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5195766,50.60018,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.69",143,"562.98616","Escherichia coli 9fff3b5a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5254221,50.558037,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.540",93,"562.98625","Escherichia coli 9cdffd4c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4604520,50.673294,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.73",92,"562.98632","Escherichia coli 67a5fc76-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5018900,50.43888,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.95",146,"562.98636","Escherichia coli 66dfdabe-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5126389,50.60336,NA,2008,NA,NA
+"MLST.ecoli_achtman_4.95",91,"562.98653","Escherichia coli d80d182e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5176893,50.568844,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.73",194,"562.98655","Escherichia coli 85e386e6-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5226723,50.386677,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.12",88,"562.98673","Escherichia coli b713b6b4-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5053688,50.44985,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.10",106,"562.98680","Escherichia coli b6a0f494-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4783087,50.655235,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.117",198,"562.98686","Escherichia coli dc2c6d38-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5079452,50.746616,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.73",164,"562.98694","Escherichia coli 15b9e292-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5234897,50.420494,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.95",109,"562.98710","Escherichia coli 12590f38-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5284646,50.67974,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.1828",63,"562.98720","Escherichia coli ab9d7a9a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5020442,50.566265,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.421",111,"562.98725","Escherichia coli 83cf6f5e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5225632,50.597477,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.69",131,"562.98737","Escherichia coli a5c8818c-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5135836,50.69531,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.405",179,"562.98743","Escherichia coli 87f6cece-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5316740,50.537415,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.73",132,"562.98745","Escherichia coli 89753c18-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5171512,50.456036,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.131",73,"562.98746","Escherichia coli 88aa2550-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5132881,50.577793,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.10241",63,"562.98751","Escherichia coli 9858f0e4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5053035,50.578354,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.95",56,"562.98753","Escherichia coli b863fcee-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4909944,50.5807,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.73",113,"562.98756","Escherichia coli 9878269e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5078281,50.552853,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.131",87,"562.98774","Escherichia coli 34c5fc02-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5077040,50.616737,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.73",112,"562.98775","Escherichia coli 36e0505a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5052022,50.432896,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.12",147,"562.98783","Escherichia coli c055162c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5179401,50.492653,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.10229",48,"562.98784","Escherichia coli beb30950-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4967846,50.681602,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.10",120,"562.98785","Escherichia coli 2eb26530-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5052889,50.652924,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.131",132,"562.98807","Escherichia coli a13685fa-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5301370,50.73477,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.10",74,"562.98814","Escherichia coli 764bd890-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4767437,50.611828,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.349",63,"562.98816","Escherichia coli 6075f096-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4726328,50.714066,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.393",98,"562.98825","Escherichia coli 5c34a464-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5163823,50.5967,NA,2009,NA,NA
+"MLST.ecoli_achtman_4.127",86,"562.98841","Escherichia coli 8dc8cd58-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5092405,50.402687,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.681",51,"562.98843","Escherichia coli bdf304ee-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4883425,50.664276,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.73",174,"562.98860","Escherichia coli de410dea-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5160416,50.555225,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.73",153,"562.98878","Escherichia coli 128ed3fc-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5216177,50.55766,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.131",161,"562.98889","Escherichia coli 119d8826-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5058570,50.761223,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.73",103,"562.98897","Escherichia coli a6069184-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4991073,50.534203,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.491",138,"562.98899","Escherichia coli a887cf86-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5297232,50.537468,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.73",132,"562.98955","Escherichia coli bd6ba3fe-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5109208,50.43124,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.372",92,"562.98958","Escherichia coli 97b4129a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5018801,50.389027,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.95",80,"562.99001","Escherichia coli 5ef3f4a2-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5147577,50.590286,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.567",66,"562.99002","Escherichia coli 7ab9fb64-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4904314,50.56605,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.131",125,"562.99006","Escherichia coli 5c47b734-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4952745,50.679775,NA,2010,NA,NA
+"MLST.ecoli_achtman_4.1125",108,"562.99039","Escherichia coli 858e74ee-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4901792,50.625385,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.443",143,"562.99048","Escherichia coli c515fd3a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5156534,50.74131,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.73",119,"562.99059","Escherichia coli e12ef2b0-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5110324,50.389877,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.453",102,"562.99068","Escherichia coli 21324fec-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4798505,50.702854,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.416",77,"562.99073","Escherichia coli 3dfc51ea-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5177860,50.73627,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.10237",47,"562.99106","Escherichia coli e59b7ecc-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4878295,50.50576,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.69",162,"562.99126","Escherichia coli a85329d8-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5210606,50.573677,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.14",134,"562.99138","Escherichia coli 952569ca-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5187351,50.447983,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.69",126,"562.99150","Escherichia coli a6a9dd5c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5165712,50.62218,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.95",127,"562.99158","Escherichia coli dc278fd8-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5064243,50.650986,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.12",144,"562.99170","Escherichia coli d707be2e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5164021,50.44569,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.73",128,"562.99195","Escherichia coli cdc76b48-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5123960,50.571003,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.88",92,"562.99200","Escherichia coli c2a895f8-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4937704,50.629402,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.38",158,"562.99201","Escherichia coli c2f61e5e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5340288,50.475628,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.2086",79,"562.99204","Escherichia coli c4948962-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4699345,50.748753,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.978",77,"562.99208","Escherichia coli 38b4e5da-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4806666,50.61916,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.95",62,"562.99210","Escherichia coli 3ad501a6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5071833,50.519173,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.73",146,"562.99217","Escherichia coli 617432c8-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5153636,50.553143,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.73",80,"562.99221","Escherichia coli 59faed3e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5047168,50.503925,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.95",106,"562.99225","Escherichia coli 79f208d4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5021413,50.543583,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.297",74,"562.99250","Escherichia coli a44eb0a0-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4852733,50.723972,NA,2011,NA,NA
+"MLST.ecoli_achtman_4.95",88,"562.99270","Escherichia coli ca3817ee-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5111861,50.557655,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.372",62,"562.99283","Escherichia coli c7b37842-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4804301,50.49311,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.44",134,"562.99295","Escherichia coli 2076139a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4941263,50.798225,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.399",287,"562.99313","Escherichia coli 98e4536a-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5040230,50.771156,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.73",148,"562.99322","Escherichia coli e516934c-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5196755,50.53165,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.80",81,"562.99327","Escherichia coli e700856e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5054084,50.333355,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.393",87,"562.99336","Escherichia coli e685a1be-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5142410,50.599834,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.1057",185,"562.99359","Escherichia coli b56687a0-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5435160,50.467033,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.399",206,"562.99381","Escherichia coli a6dd25cc-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4693830,50.738907,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.73",128,"562.99387","Escherichia coli b1ab1cb6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5160368,50.464947,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.144",128,"562.99399","Escherichia coli a7d17442-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5097181,50.582508,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.127",71,"562.99408","Escherichia coli ddf9894c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5018137,50.450813,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.12",94,"562.99426","Escherichia coli d7858ca0-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5013649,50.415115,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.95",72,"562.99444","Escherichia coli 3bfd137a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5055880,50.54208,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.131",56,"562.99448","Escherichia coli 51231ff6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5027366,50.558025,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.95",97,"562.99465","Escherichia coli 60ae8f32-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5098703,50.600555,NA,2012,NA,NA
+"MLST.ecoli_achtman_4.355",136,"562.99477","Escherichia coli 89ed9254-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4813531,50.67496,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.69",180,"562.99483","Escherichia coli 883e9390-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5300205,50.71783,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.80",150,"562.99484","Escherichia coli 8919c398-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5084200,50.332737,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.73",194,"562.99513","Escherichia coli 8f08e6f8-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5224047,50.42181,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.69",121,"562.99518","Escherichia coli d1a263c2-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5297831,50.631588,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.1324",81,"562.99528","Escherichia coli d3589a42-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4774480,50.72148,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.550",154,"562.99533","Escherichia coli 3e41abaa-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5156318,50.631786,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.59",203,"562.99539","Escherichia coli 40a39d5e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5208569,50.549835,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.69",147,"562.99543","Escherichia coli 2328d726-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5204663,50.640453,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.58",140,"562.99550","Escherichia coli 3d003d38-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5118278,50.69795,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.10255",89,"562.99554","Escherichia coli 7f47e2a4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5132142,50.39364,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.95",89,"562.99556","Escherichia coli 1e0b65b0-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5063967,50.531982,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.73",132,"562.99557","Escherichia coli 80f2c344-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5162107,50.52249,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.999",31,"562.99576","Escherichia coli e69a0f82-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4721971,50.612,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.117",109,"562.99586","Escherichia coli e890f120-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5006442,50.75944,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.95",98,"562.99607","Escherichia coli b48361f0-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5188878,50.520267,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.131",129,"562.99629","Escherichia coli adc24eda-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5133316,50.588177,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.131",100,"562.99630","Escherichia coli 8dd41590-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5187679,50.701115,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.73",123,"562.99649","Escherichia coli dfc407d4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5071567,50.58523,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.108",96,"562.99658","Escherichia coli e25460d4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5020459,50.409336,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.10",69,"562.99665","Escherichia coli d15ece2c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4688463,50.62162,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.14",168,"562.99674","Escherichia coli c4addfb6-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5301905,50.403675,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.676",69,"562.99679","Escherichia coli 4c5cdaf2-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4734277,50.721684,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.73",116,"562.99696","Escherichia coli 5a1d6030-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5023009,50.520596,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.1011",81,"562.99718","Escherichia coli 715d8b94-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5122745,50.542862,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.131",126,"562.99721","Escherichia coli a4b8a3d4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5303894,50.648956,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.4038",80,"562.99723","Escherichia coli 5c6fcea4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4562174,50.891068,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.648",111,"562.99726","Escherichia coli 5b2964ce-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5299321,50.457558,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.12",92,"562.99736","Escherichia coli ab5e45f4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5128376,50.50332,NA,2013,NA,NA
+"MLST.ecoli_achtman_4.73",140,"562.99746","Escherichia coli 8a223c84-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5077252,50.53659,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.69",149,"562.99747","Escherichia coli 8ade8920-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5354807,50.798004,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.58",113,"562.99749","Escherichia coli 8bc3f47e-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4845606,50.80933,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.117",114,"562.99750","Escherichia coli 8bdf0494-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5070190,50.77135,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.62",180,"562.99763","Escherichia coli 86900254-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5214603,50.522484,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.73",149,"562.99778","Escherichia coli d0198170-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5130259,50.453613,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.58",97,"562.99787","Escherichia coli d38c2b3c-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4924973,50.794514,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.73",98,"562.99803","Escherichia coli 1b9c3e80-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5119863,50.51055,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.127",76,"562.99805","Escherichia coli 1acb658a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5060290,50.443573,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.393",86,"562.99806","Escherichia coli 4191f922-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5155714,50.498592,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.12",71,"562.99819","Escherichia coli 7f62382a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5017388,50.49119,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.1193",89,"562.99825","Escherichia coli 92eafa40-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5175668,50.59123,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.95",61,"562.99836","Escherichia coli ecd7bab6-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5131954,50.61727,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.393",73,"562.99847","Escherichia coli ed539cbc-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5073459,50.640835,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.69",100,"562.99848","Escherichia coli ed7cdf32-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5082026,50.6242,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.12",89,"562.99858","Escherichia coli ef0c2ad8-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5060603,50.6096,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.95",99,"562.99864","Escherichia coli fa54b9d2-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5089267,50.71365,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.12",85,"562.99865","Escherichia coli f08f4480-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5090232,50.52813,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.109",63,"562.99873","Escherichia coli e8bbd2d2-7bb8-11e9-a8d3-68b59976a384","Good","Norway",4885260,50.76733,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.352",82,"562.99874","Escherichia coli e8d0fe46-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5012849,50.519295,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.73",203,"562.99899","Escherichia coli ac401b8c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5238072,50.44421,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.69",118,"562.99907","Escherichia coli b123c676-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5134916,50.737324,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.95",88,"562.99911","Escherichia coli cb59f448-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4975245,50.542072,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.95",64,"562.99916","Escherichia coli c3292b82-7bb8-11e9-a8d3-68b59976a384","Good","Norway",5137284,50.578575,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.88",127,"562.99920","Escherichia coli 585745f4-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4966210,50.775078,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.73",125,"562.99922","Escherichia coli 3b57c2bc-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5157374,50.45498,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.69",147,"562.99928","Escherichia coli 6926d9bc-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5295176,50.729797,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.95",134,"562.99933","Escherichia coli 6001b9a6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5035220,50.546608,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.12",140,"562.99940","Escherichia coli 6ba5570e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5205410,50.54785,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.69",121,"562.99947","Escherichia coli 66716a48-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5132134,50.618008,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.131",101,"562.99948","Escherichia coli 630641da-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5173212,50.7984,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.12",101,"562.99951","Escherichia coli 633ec82a-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5198899,50.471992,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.10283",150,"562.99958","Escherichia coli 641511d2-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4940700,50.682213,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.136",57,"562.99966","Escherichia coli 676d5f2e-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4886045,50.78107,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.14",162,"562.99978","Escherichia coli c43a3af6-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5242097,50.47726,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.405",178,"562.99981","Escherichia coli c4ef77b8-7bb9-11e9-a8d3-68b59976a384","Good","Norway",5370621,50.44435,NA,2014,NA,NA
+"MLST.ecoli_achtman_4.218",89,"562.99990","Escherichia coli c7f8f86c-7bb9-11e9-a8d3-68b59976a384","Good","Norway",4742011,50.61867,NA,2014,NA,NA
