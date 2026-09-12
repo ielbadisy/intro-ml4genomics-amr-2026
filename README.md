@@ -55,11 +55,15 @@ l'énoncé fait foi.
 Avant de commencer, installer :
 
 - une version récente de [R](https://cran.r-project.org/) ;
-- [RStudio Desktop](https://posit.co/download/rstudio-desktop/) ou un autre
-  environnement R ;
+- au choix, [RStudio Desktop](https://posit.co/download/rstudio-desktop/) ou
+  [Visual Studio Code](https://code.visualstudio.com/) ;
 - [Quarto](https://quarto.org/docs/get-started/) ;
 - facultativement, une distribution LaTeX pour produire le PDF. L'export HTML
   ne nécessite pas LaTeX.
+
+Avec Visual Studio Code, installer les extensions **R** et **Quarto** depuis le
+catalogue des extensions. RStudio intègre directement la console R et reconnaît
+le fichier `project.Rproj`.
 
 Une connexion Internet est nécessaire lors de la première installation des
 packages.
@@ -98,7 +102,12 @@ library(phynotype)
    cd intro-ml4genomics-amr-2026
    ```
 
-2. Ouvrir `project/project.Rproj` dans RStudio.
+2. Choisir un environnement de travail :
+
+   - avec **RStudio**, ouvrir `project/project.Rproj` ;
+   - avec **Visual Studio Code**, ouvrir le dossier racine du dépôt, puis
+     utiliser un terminal R avec `project/` comme répertoire courant.
+
 3. Ouvrir [`project/projet-enonce.pdf`](project/projet-enonce.pdf) et lire
    entièrement l'énoncé avant de commencer. La
    [version HTML](project/projet-enonce.html) et le
@@ -113,6 +122,9 @@ library(phynotype)
    ```r
    raw <- basetable::btread("ecoli_amr_isolate_v2.csv")
    ```
+
+Les deux environnements conviennent. Les commandes R, le document Quarto et les
+résultats attendus sont identiques dans RStudio et Visual Studio Code.
 
 Ne pas modifier les fichiers bruts. Toute transformation doit être exprimée
 dans le document reproductible.
