@@ -55,15 +55,16 @@ l'énoncé fait foi.
 Avant de commencer, installer :
 
 - une version récente de [R](https://cran.r-project.org/) ;
-- au choix, [RStudio Desktop](https://posit.co/download/rstudio-desktop/) ou
-  [Visual Studio Code](https://code.visualstudio.com/) ;
+- au choix, [RStudio Desktop](https://posit.co/download/rstudio-desktop/),
+  [Visual Studio Code](https://code.visualstudio.com/) ou
+  [Positron](https://positron.posit.co/) ;
 - [Quarto](https://quarto.org/docs/get-started/) ;
 - facultativement, une distribution LaTeX pour produire le PDF. L'export HTML
   ne nécessite pas LaTeX.
 
 Avec Visual Studio Code, installer les extensions **R** et **Quarto** depuis le
 catalogue des extensions. RStudio intègre directement la console R et reconnaît
-le fichier `project.Rproj`.
+le fichier `project.Rproj`. Positron intègre nativement R et Quarto.
 
 Une connexion Internet est nécessaire lors de la première installation des
 packages.
@@ -106,7 +107,9 @@ library(phynotype)
 
    - avec **RStudio**, ouvrir `project/project.Rproj` ;
    - avec **Visual Studio Code**, ouvrir le dossier racine du dépôt, puis
-     utiliser un terminal R avec `project/` comme répertoire courant.
+     utiliser un terminal R avec `project/` comme répertoire courant ;
+   - avec **Positron**, ouvrir directement le dossier `project/`, puis démarrer
+     la console R intégrée.
 
 3. Ouvrir [`project/projet-enonce.pdf`](project/projet-enonce.pdf) et lire
    entièrement l'énoncé avant de commencer. La
@@ -123,8 +126,9 @@ library(phynotype)
    raw <- basetable::btread("ecoli_amr_isolate_v2.csv")
    ```
 
-Les deux environnements conviennent. Les commandes R, le document Quarto et les
-résultats attendus sont identiques dans RStudio et Visual Studio Code.
+Les trois environnements conviennent. Les commandes R, le document Quarto et
+les résultats attendus sont identiques dans RStudio, Visual Studio Code et
+Positron.
 
 Ne pas modifier les fichiers bruts. Toute transformation doit être exprimée
 dans le document reproductible.
