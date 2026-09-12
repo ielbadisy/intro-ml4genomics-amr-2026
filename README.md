@@ -1,6 +1,6 @@
 # Introduction au machine learning pour la génomique de l'antibiorésistance
 
-Support du module **DU Bioinformatique — UM6SS (2026)** consacré à
+Support du module **DU Bioinformatique, UM6SS (2026)** consacré à
 l'apprentissage supervisé et non supervisé appliqué à la résistance aux
 antimicrobiens chez *Escherichia coli*.
 
@@ -143,7 +143,7 @@ numérotées de [`project/projet-enonce.pdf`](project/projet-enonce.pdf). Le
 résumé ci-dessous sert de feuille de route ; en cas de doute, le texte complet
 du PDF fait foi.
 
-### Partie 1 — Prétraitement
+### Partie 1 : Prétraitement
 
 1. Construire la cible binaire `cipro_R` à partir de `ciprofloxacin`, en
    conservant uniquement `Resistant` et `Susceptible`.
@@ -154,7 +154,7 @@ du PDF fait foi.
 4. Calculer la prévalence de la résistance et expliquer ses conséquences sur
    les métriques.
 
-### Partie 2 — Apprentissage non supervisé
+### Partie 2 : Apprentissage non supervisé
 
 1. Préparer les variables mixtes sans inclure `cipro_R`.
 2. Comparer et valider plusieurs nombres de groupes ; justifier le choix de
@@ -167,7 +167,7 @@ La cible ne doit jamais intervenir dans la construction des groupes. Son usage
 est autorisé uniquement pour l'évaluation a posteriori de leur association à
 la résistance.
 
-### Partie 3 — Apprentissage supervisé
+### Partie 3 : Apprentissage supervisé
 
 1. Mettre de côté environ 25 % des observations comme jeu de test.
 2. Comparer exactement ces sept apprenants dans un seul appel à
@@ -188,7 +188,7 @@ la résistance.
 6. Inclure le phénotype non supervisé comme variable candidate et juger sa
    contribution.
 
-### Partie 4 — Lecture croisée et hypothèses
+### Partie 4 : Lecture croisée et hypothèses
 
 Répondre explicitement à la question suivante : le phénotype non supervisé
 apporte-t-il une information au modèle supervisé ? Appuyer la réponse sur
@@ -196,11 +196,11 @@ l'importance par permutation ou les valeurs SHAP.
 
 Discuter ensuite, en deux à quatre phrases chacune :
 
-- **H1 — co-résistance** : association avec les autres antibiotiques et
+- **H1, co-résistance** : association avec les autres antibiotiques et
   plausibilité biologique ;
-- **H2 — signal d'assemblage** : rôle de `genome_length` et `gc_content`,
+- **H2, signal d'assemblage** : rôle de `genome_length` et `gc_content`,
   direct ou indirect ;
-- **H3 — confusion géographique/hôte** : effet de collecte, diffusion clonale
+- **H3, confusion géographique/hôte** : effet de collecte, diffusion clonale
   ou combinaison des deux.
 
 ## Garde-fous méthodologiques
