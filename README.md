@@ -44,8 +44,11 @@ pour sept autres antibiotiques. Il combine :
     └── articles et documentation du cours
 ```
 
-Les fichiers de correction destinés à l'enseignant ne font pas partie des
-ressources distribuées sur GitHub.
+Le corrigé reste réservé à l'enseignant pendant la réalisation du projet et
+n'est pas accessible dans ce dépôt. Il sera partagé avec les étudiants après
+la remise des travaux, afin qu'ils puissent comparer leur démarche, comprendre
+leurs erreurs et reprendre l'analyse pas à pas. Jusqu'à cette date, seul
+l'énoncé fait foi.
 
 ## Prérequis
 
