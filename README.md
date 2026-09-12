@@ -13,6 +13,14 @@ pour sept autres antibiotiques. Il combine :
 - une imputation adaptée aux données mixtes avec `missknn` ;
 - une lecture biologique et méthodologique des résultats.
 
+> **Document de travail obligatoire**
+>
+> Toutes les questions du projet se trouvent dans
+> [`project/projet-enonce.pdf`](project/projet-enonce.pdf). Ce PDF est
+> l'énoncé de référence : l'étudiant doit le suivre du début à la fin et
+> répondre aux questions dans l'ordre. Le présent README explique comment
+> s'organiser et exécuter le travail ; il ne remplace pas l'énoncé.
+
 ## Contenu du dépôt
 
 ```text
@@ -88,7 +96,10 @@ library(phynotype)
    ```
 
 2. Ouvrir `project/project.Rproj` dans RStudio.
-3. Lire entièrement `project/projet-enonce.qmd` ou son export PDF/HTML.
+3. Ouvrir [`project/projet-enonce.pdf`](project/projet-enonce.pdf) et lire
+   entièrement l'énoncé avant de commencer. La
+   [version HTML](project/projet-enonce.html) et le
+   [source Quarto](project/projet-enonce.qmd) contiennent les mêmes consignes.
 4. Lire `project/build_clean_data.R` afin de comprendre la provenance et
    l'échantillonnage des données.
 5. Créer dans `project/` un nouveau document, par exemple
@@ -103,10 +114,31 @@ library(phynotype)
 Ne pas modifier les fichiers bruts. Toute transformation doit être exprimée
 dans le document reproductible.
 
+## Méthode de travail pas à pas
+
+Le projet n'est pas une liste d'analyses indépendantes. Chaque étape produit
+les objets et les arguments nécessaires à l'étape suivante. Pour chaque
+question du PDF :
+
+1. recopier son numéro et son intitulé comme section du rapport personnel ;
+2. identifier les données d'entrée et l'objet R attendu en sortie ;
+3. écrire et exécuter le code correspondant ;
+4. afficher le tableau, la métrique ou le graphique demandé ;
+5. ajouter immédiatement une interprétation en quelques phrases ;
+6. rendre régulièrement le document pour détecter les erreurs de
+   reproductibilité avant de poursuivre.
+
+Ne pas passer à la partie supervisée tant que le prétraitement et le
+phénotypage non supervisé ne fonctionnent pas. Le rapport final doit conserver
+la même progression que le PDF : **prétraitement → non supervisé → supervisé
+→ lecture croisée → conclusion**.
+
 ## Travail demandé
 
-Le document final doit répondre, dans l'ordre, aux questions numérotées de
-`projet-enonce.qmd`.
+Le document final doit répondre, dans l'ordre, à toutes les questions
+numérotées de [`project/projet-enonce.pdf`](project/projet-enonce.pdf). Le
+résumé ci-dessous sert de feuille de route ; en cas de doute, le texte complet
+du PDF fait foi.
 
 ### Partie 1 — Prétraitement
 
