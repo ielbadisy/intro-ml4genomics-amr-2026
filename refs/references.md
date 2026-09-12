@@ -1,4 +1,4 @@
-# Références clés — Workshop ML en génomique (`funcml`)
+# Références clés : Workshop ML en génomique (`funcml`)
 
 Toutes ces références sont citées dans `references.bib` et rendues dans `ml-genomique-funcml.qmd`.
 
@@ -23,7 +23,7 @@ Toutes ces références sont citées dans `references.bib` et rendues dans `ml-g
 
 | # | Référence | Journal / année | DOI / accès |
 |---|---|---|---|
-| 8 | James G, Witten D, Hastie T, Tibshirani R, Taylor J. *An Introduction to Statistical Learning with Applications in R*, 2e éd. | Springer, 2021 | [10.1007/978-3-031-38747-0](https://doi.org/10.1007/978-3-031-38747-0) — PDF libre : <https://www.statlearning.com> |
+| 8 | James G, Witten D, Hastie T, Tibshirani R, Taylor J. *An Introduction to Statistical Learning with Applications in R*, 2e éd. | Springer, 2021 | [10.1007/978-3-031-38747-0](https://doi.org/10.1007/978-3-031-38747-0) ; PDF libre : <https://www.statlearning.com> |
 | 9 | Varma S, Simon R. *Bias in error estimation when using cross-validation for model selection.* | BMC Bioinformatics, 2006 | [10.1186/1471-2105-7-91](https://doi.org/10.1186/1471-2105-7-91) |
 | 10 | Saito T, Rehmsmeier M. *The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets.* | PLoS ONE, 2015 | [10.1371/journal.pone.0118432](https://doi.org/10.1371/journal.pone.0118432) |
 | 11 | Van Calster B, McLernon DJ, van Smeden M, Wynants L, Steyerberg EW. *Calibration: the Achilles heel of predictive analytics.* | BMC Medicine, 2019 | [10.1186/s12916-019-1466-7](https://doi.org/10.1186/s12916-019-1466-7) |
