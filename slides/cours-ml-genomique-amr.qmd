@@ -8,7 +8,7 @@ lang: fr
 format:
   beamer:
     aspectratio: 169
-    fontsize: 11pt
+    fontsize: 10pt
     slide-level: 2
     toc: false
     fig-width: 7.2
@@ -38,23 +38,22 @@ format:
 ---
 
 
-# Partie 1 : Le machine learning en génomique : applications à l'antibiorésistance
+# Partie 1 : Machine learning en génomique (applications à l'antibiorésistance)
 
-## Pourquoi le machine learning en génomique
+## Pourquoi du Machine learning en génomique ?
 
 
 -   les modèles classiques supposent peu de prédicteurs, choisis à la main
 
 -   fortes corrélations (déséquilibre de liaison), interactions, effets non linéaires
 
--   $10^3$ à $10^6$ variables par échantillon : positions, gènes, $k$-mers, sites de méthylation
-
 -   le ML apprend $\hat f(x) \to y$ et **évalue** sur des données non vues (test), fait de la sélection de variables à grande échelle, découvre une structure sans label
 
 \centering
 \includegraphics[height=0.32\textheight]{figures/diagram-p-gg-n.png}
 
-\raggedright Applications : effet des variants, expression, éléments régulateurs, repliement des protéines, prédiction **génotype $\to$ phénotype** de la résistance aux antimicrobiens, le fil rouge de ce cours.
+
+
 
 ## De la donnée brute au modèle entraîné
 
@@ -63,6 +62,8 @@ format:
 
 \footnotesize Anahtar, Yang \& Kanjilal (2021), *J. Clin. Microbiol.* 59:e01260-20, Fig. 1A.
 
+
+
 ## Trois types d'apprentissage
 
 \centering
@@ -70,8 +71,9 @@ format:
 
 \footnotesize Anahtar, Yang \& Kanjilal (2021), Fig. 1B. Ce cours couvre les deux types de gauche : **supervisé** (`funcml`) et **non supervisé** (`phynotype`) ; l'apprentissage par renforcement est hors périmètre.
 
-## Apprentissage supervisé, formellement
 
+
+## Apprentissage supervisé
 Données $(x_i, y_i)_{i=1}^{n}$, on cherche $\hat f$ tel que $\hat f(x)\approx y$ :
 
 $$
@@ -81,6 +83,9 @@ $$
 -   $y$ quantitatif $\to$ régression (RMSE, MAE)
 -   $y$ qualitatif $\to$ classification : $\hat p(x) = \Pr(y=1\mid x)$, puis une classe via un seuil $t$
 -   le risque $R(\hat f)=\mathbb{E}[L(y,\hat f(x))]$ s'estime sur des données **non vues**, jamais sur les données d'entraînement
+
+
+
 
 ## Le compromis biais-variance
 
@@ -113,11 +118,10 @@ $$
 :::
 :::::
 
-La flexibilité utile est un **hyperparamètre** : réglé par validation croisée, jamais sur l'ensemble de test.[^islr]
+La flexibilité utile est un **hyperparamètre**.
 
-[^islr]: James, Witten, Hastie, Tibshirani \& Taylor (2021), *An Introduction to Statistical Learning with R*, 2e éd., ch. 2.
 
-## Grande dimension ($p \gg n$) et la malédiction qui l'accompagne
+## La grande dimension ($p \gg n$) et sa 
 
 \slidesubtitle{Le régime typique en génomique, et particulièrement en génomique de l'AMR}
 
@@ -132,8 +136,9 @@ La flexibilité utile est un **hyperparamètre** : réglé par validation crois�
 \end{tikzpicture}}
 
 -   sans contrainte, une infinité de modèles ajustent parfaitement les données d'entraînement ; quand $p\to\infty$, presque tous les points deviennent équidistants, les notions de voisinage ($k$-NN, noyaux) se dégradent
--   tester $m=10^5$ variables à $\alpha=0.05$ donne $\mathbb{E}[\text{faux positifs}]\approx5\,000$, la sélection doit se faire **à l'intérieur** de la validation croisée, jamais avant
 -   réponses : **régularisation** (lasso/ridge/elastic net), **filtrage**, **réduction de dimension** (PCA, embeddings)
+
+
 
 ## Validation croisée à $k$ blocs
 
@@ -162,9 +167,11 @@ $$
 \mathrm{CV}(\hat f) = \frac{1}{v}\sum_{k=1}^{v} L\Big(y^{(k)},\, \hat f^{(-k)}\big(x^{(k)}\big)\Big)
 $$
 
-Stratifiée par défaut ; **groupée** quand les observations sont liées. Réglage + comparaison + estimation finale : sur des rééchantillonnages **distincts** (validation croisée imbriquée).[^varma]
+Stratifiée par défaut ; **groupée** quand les observations sont liées. [^varma]
 
 [^varma]: Varma \& Simon (2006), *BMC Bioinformatics* 7:91.
+
+
 
 ## Cinq pièges qui fragilisent le ML en génomique
 
@@ -180,58 +187,61 @@ Stratifiée par défaut ; **groupée** quand les observations sont liées. Régl
 
 \footnotesize Whalen, Schreiber, Noble \& Pollard (2022), *Nat. Rev. Genet.* 23:169–181, "Navigating the pitfalls of applying machine learning in genomics".
 
-## Deux façons de prédire la résistance à partir d'un génome
 
-**Basée sur des règles**
+## Concepts clés : bactérie et génome
 
--   présence/absence de gènes connus (*mecA*, *vanA*) ou de mutations (*gyrA* S83L)
--   excellent pour une résistance simple, bien caractérisée ; difficile à faire évoluer
+| Concept | Définition simple |
+|---|---|
+| **Escherichia coli (E. coli)** | Espèce bactérienne très étudiée. Différents isolats peuvent avoir des profils génétiques différents. |
+| **Souche / isolat** | Population bactérienne obtenue à partir d’un prélèvement particulier. |
+| **Génome bactérien** | Ensemble de l’information génétique de la bactérie, principalement portée par l’ADN. |
+| **Gène** | Séquence d’ADN associée à une fonction biologique. |
+| **Mutation / variant** | Modification de la séquence d’ADN pouvant influencer un caractère biologique. |
 
-**ML génotypique**
 
--   apprend les caractéristiques prédictives directement des données, sans base de gènes organisée
--   passe à l'échelle sur des mécanismes non encore caractérisés, au prix d'une interprétation moins immédiate
+## Concepts clés : antibiotique et résistance
 
-## Exemple de pipeline : featurisation par $k$-mers
+| Concept | Définition simple |
+|---|---|
+| **Antibiotique** | Substance qui tue les bactéries ou freine leur multiplication. |
+| **Ciprofloxacine** | Antibiotique de la famille des fluoroquinolones étudié dans notre application. |
+| **Antibiorésistance (AMR)** | Capacité d’une bactérie à résister à l’action d’un antibiotique. |
+| **AST** | *Antimicrobial Susceptibility Testing* : test évaluant la sensibilité ou la résistance à un antibiotique. |
+| **Génotype / Phénotype** | **Génotype** = information génétique ; **phénotype** = caractère observable, ici sensible (S) ou résistant (R). |
 
-\centering
-\includegraphics[height=0.72\textheight]{figures/anahtar2021-fig2b-kmer-featurization.png}
 
-\footnotesize Anahtar, Yang \& Kanjilal (2021), Fig. 2B, génome $\to$ décomposition en $k$-mers $\to$ table isolat $\times$ compte $\to$ entraînement $\to$ $k$-mers pondérés associés à la résistance.
 
-## Autre voie de featurisation : les modèles de fondation
+## Apprentissage non supervisé
 
--   pré-entraînés par auto-supervision sur de larges corpus de génomes non annotés (**DNABERT-2**, **Nucleotide Transformer**, **HyenaDNA**, **Enformer**), puis réutilisés en aval (*fine-tuning* ou *embeddings* figés $\to$ ranger/xgboost)
--   utile quand la tâche part de la séquence brute avec peu de données étiquetées ; superflu quand les prédicteurs sont déjà tabulaires (notre cas ciprofloxacine), établir d'abord une référence tabulaire honnête
+> **Les isolats présentent-ils naturellement des profils similaires ?**
 
-\footnotesize Ji *et al.* (2021, DNABERT) ; Dalla-Torre *et al.* (2024, Nucleotide Transformer) ; Avsec *et al.* (2021, Enformer).
+**Caractéristiques des isolats**  
+↓  
+**Clustering**  
+↓  
+**Groupes d'isolats similaires**
 
-## Le cas *E. coli* / ciprofloxacine : ce que dit la littérature
+### Objectif
 
-D'après Moradigaravand *et al.* (2018), *PLoS Comput. Biol.* 14:e1006258, 1 936 génomes d'*E. coli*, 11 antibiotiques :
+**Découvrir la structure naturelle des données sans utiliser le statut sensible/résistant.**
 
--   le **boosting de gradient** gagne sur 11/11 antibiotiques ; la présence/absence de gènes est utilisée dans **tous** les meilleurs modèles
 
--   pour la ciprofloxacine, la présence de gènes seule ne suffit pas, il n'existe pas de gène unique de résistance
+## Apprentissage supervisé
 
--   ajouter les SNP du génome cœur améliore seulement 2/11 antibiotiques, dont la ciprofloxacine (+2,8 %), via **gyrA** et **parC**, les régions connues de résistance aux quinolones
+> **Peut-on prédire la résistance à la ciprofloxacine ?**
 
-\footnotesize Une leçon directe pour la suite : la structure de population (ST131 est intrinsèquement résistant) explique une partie du signal, le piège de confusion vu plus haut, dans des données réelles.
+**Caractéristiques des isolats (X)**  
+↓  
+**Algorithme de classification**  
+↓  
+**Sensible / Résistant (Y)**
 
-## À retenir
+### Objectif
 
--   la prédiction s'**évalue**, elle ne s'affirme pas, $p\gg n$ et les exemples dépendants sont la norme en génomique, pas l'exception
--   cinq pièges reviennent sans cesse : décalage de distribution, dépendance, confusion, fuite, déséquilibre
--   la présence/absence de gènes prédit bien la plupart des phénotypes de résistance chez *E. coli* ; la ciprofloxacine a nécessité un niveau SNP que les gènes seuls ne fournissaient pas
--   suite : deux sessions pratiques sur **nos propres données** de résistance d'*E. coli* (`data/ecoli_amr_isolate_v2.csv`, 700 isolats, 8 antibiotiques)
+**Prédire le phénotype de résistance d'un nouvel isolat.**
+
 
 # Partie 2 : Apprentissage supervisé : comparer plusieurs algorithmes (funcml)
-
-## Le package `funcml`
-
--   une interface explicite pour tout le flux : `fit()`, `predict()`, `evaluate()`, `tune()`, `compare()`, `interpret()`, `estimate()`
--   27 apprenants enregistrés : linéaires (`glm`, `glmnet`), arbres (`rpart`, `ctree`), forêts (`ranger`, `randomForest`, `cforest`), boosting (`gbm`, `xgboost`, `lightgbm`), distance/marge (`kknn`, `e1071_svm`), additifs (`gam`, `earth`), réseaux de neurones (`dmlp`, `mlp`, `nnet`), ensembles (`stacking`, `superlearner`)
--   même appel `fit(formula, data, model = "...")` pour les 27, un seul mot change
 
 ## Le pipeline `funcml`, en un schéma
 
@@ -255,30 +265,24 @@ D'après Moradigaravand *et al.* (2018), *PLoS Comput. Biol.* 14:e1006258, 1 936
 -   `fit` ajuste un apprenant unique ; `compare` ajuste **plusieurs** apprenants sous le même rééchantillonnage
 -   `tune` règle les hyperparamètres par validation croisée ; `interpret` explique le modèle ajusté (importance, effets)
 
-## Les familles d'algorithmes en un coup d'œil
+
+
+## Les familles d'algorithmes 
 
 -   **linéaires / pénalisés** : `glm` (référence interprétable), `glmnet` (lasso/ridge pour $p\gg n$)
+
 -   **arbres uniques** : `rpart` (CART, glouton), `ctree` (test d'indépendance formel)
+
 -   **forêts** : `ranger`/`randomForest` (bagging + sous-espace aléatoire), `cforest`
+
 -   **boosting** : `gbm`, `xgboost` (second ordre + régularisation), `lightgbm`, `adaboost`
+
 -   **distance / marge** : `kknn` ($k$ plus proches voisins), `e1071_svm` (marge maximale, noyau)
 -   **additifs / splines** : `gam`, `earth` (MARS)
+
 -   **réseaux de neurones** : `dmlp`, `mlp`, `nnet`
+
 -   **ensembles** : `stacking`, `superlearner`, combinaison pondérée, réglée par validation croisée
-
-## Zoom : les forêts aléatoires
-
-\centering
-\includegraphics[height=0.62\textheight]{figures/diagram-random-forest.png}
-
-\footnotesize Chaque arbre voit un tirage bootstrap des lignes et un sous-ensemble aléatoire de variables à chaque coupure $\to$ des erreurs décorrélées entre arbres, moyennées au vote.
-
-## Zoom : les réseaux de neurones
-
-\centering
-\includegraphics[height=0.55\textheight]{figures/15_neural_network.png}
-
-\footnotesize Une couche cachée $h$ combine les prédicteurs $x$ par des poids puis une activation non linéaire ; la sortie $\hat p$ est une fonction composée, apprise par descente de gradient (`dmlp`, `mlp`, `nnet`).
 
 ## Nos données : résistance à la ciprofloxacine
 
@@ -287,20 +291,7 @@ D'après Moradigaravand *et al.* (2018), *PLoS Comput. Biol.* 14:e1006258, 1 936
 -   prédicteurs génomiques disponibles pour tous les isolats : `genome_length`, `gc_content`, `contigs`, `collection_year`
 -   `collection_year` comporte des valeurs manquantes (16 %) $\to$ imputation nécessaire avant modélisation
 
-## Prétraitement : imputation par `missknn`
 
-`missknn` impute chaque valeur manquante par une moyenne pondérée par la distance de ses $k$ plus proches voisins complets (imputation multivariée, pas juste la moyenne de la colonne) :
-
-```r
-library(missknn)
-imp <- missknn(model_dat[vars], k = 5, seed = 42)
-model_dat[vars] <- complete(imp)
-```
-
--   `genome_length`, `gc_content`, `contigs` : aucune valeur manquante
--   `collection_year` : 114 valeurs manquantes avant imputation, 0 après
-
-\footnotesize `n = 683` isolats après retrait des 17 résultats "Intermediate" (ni résistant ni sensible).
 
 ## Comparer plusieurs algorithmes avec `compare()`
 
@@ -317,32 +308,28 @@ compare_obj <- compare(
 )
 ```
 
+
 ## Comment choisir entre plusieurs modèles
 
 -   `compare()` renvoie, pour chaque modèle $\times$ métrique, une moyenne **et** un intervalle de confiance sur les plis de validation croisée
 -   on retient le modèle sur l'**intervalle**, pas seulement sur la moyenne : deux modèles dont les intervalles se chevauchent ne sont pas franchement différents
 -   un arbre unique (`rpart`) est en général instable d'un pli à l'autre ; forêts et boosting réduisent cette variance en moyennant plusieurs arbres
 
+
+
+
 ## Au-delà de la discrimination
 
 -   l'AUC mesure la capacité à **classer** les cas devant les témoins, elle ne dit rien de la calibration (les probabilités prédites sont-elles fiables ?)
+
 -   `roc_curve()` visualise le compromis sensibilité/spécificité sur toute la gamme de seuils, pas seulement au seuil $t=0{,}5$
+
 -   `interpret(fit, method = "permute")` : on permute chaque variable et on mesure la perte de performance, plus la chute est grande, plus la variable compte pour le modèle ajusté (Watson, 2022, *Hum. Genet.* 141:1499–1513)
 
-## À retenir
 
--   `fit → predict → evaluate → compare → tune → interpret` : les mêmes verbes quel que soit l'apprenant choisi parmi les 27 enregistrés
--   comparer **plusieurs** algorithmes sous le **même** rééchantillonnage est la bonne pratique, jamais un seul modèle sans concurrent
--   on choisit un modèle sur l'intervalle de confiance de la métrique retenue, pas sur la seule moyenne
--   la discrimination (AUC) ne suffit pas : calibration, courbe ROC et importance des variables complètent le tableau
+
 
 # Partie 3 : Apprentissage non supervisé : comparer plusieurs algorithmes de clustering (phynotype)
-
-## Le package `phynotype`
-
--   workflow explicite : `explore()` (projection), `cluster()` (ajustement), `validate()` (indices internes/externes), `interpret()`, `predict()`
--   méthodes enregistrées : `"kmeans"`, `"pam"`, `"hclust"`, `"agnes"`, `"dbscan"`, `"gmm"`, `"kproto"`, `"kmm"`
--   même logique que `funcml` : un seul mot change la méthode, tout le reste de l'appel est identique
 
 ## Le pipeline `phynotype`, en un schéma
 
@@ -364,6 +351,7 @@ compare_obj <- compare(
 -   `explore` projette les données (ACP) pour repérer une structure visuelle avant de fixer une méthode
 -   `cluster` ajuste une méthode pour un $k$ donné ; `validate` compare plusieurs méthodes $\times$ plusieurs $k$ sur les mêmes indices
 
+
 ## Panorama des méthodes de clustering
 
 -   **$k$-means** : minimise la somme des carrés intra-cluster $\sum_j\sum_{x_i\in C_j}\lVert x_i-\mu_j\rVert^2$, rapide, suppose des clusters sphériques
@@ -372,6 +360,7 @@ compare_obj <- compare(
 -   **DBSCAN** : basé sur la densité, trouve le nombre de clusters automatiquement, isole le bruit
 -   **GMM** : mélange de gaussiennes, affectation probabiliste (soft clustering)
 -   **kproto / KMM** : pour données mixtes (numériques + catégorielles)
+
 
 ## Indices de validation interne
 
@@ -388,6 +377,7 @@ $$
 -   silhouette et CH : **plus haut** = meilleur ; Davies-Bouldin : **plus bas** = meilleur
 -   ces trois indices mesurent la séparation/compacité, **sans** connaître de vraie étiquette
 
+
 ## Comparer plusieurs méthodes $\times$ plusieurs valeurs de $k$
 
 `validate()` ajuste chaque méthode enregistrée pour une grille de $k$, sur les **mêmes** variables standardisées, et renvoie les trois indices pour chaque configuration :
@@ -403,12 +393,14 @@ validate(
 
 -   une seule table à lire pour comparer méthodes et $k$, plutôt qu'un ajustement à la fois
 
+
 ## Piège : un indice élevé peut cacher un clustering dégénéré
 
 -   un clustering hiérarchique peut afficher la **meilleure silhouette de toute la grille** en isolant seulement 2-3 observations atypiques dans un "cluster" à part
 -   un indice interne élevé peut donc signaler des points aberrants isolés, pas une vraie structure dans les données
 -   règle générale : **exclure** toute configuration où un cluster contient moins d'un seuil raisonnable des observations (p. ex. 5 %) avant de choisir sur la silhouette
 -   même logique que la comparaison d'algorithmes supervisés : ne jamais choisir sur un seul chiffre sans vérifier ce qu'il mesure réellement
+
 
 ## Choisir la configuration finale
 
@@ -417,9 +409,4 @@ validate(
 -   `plot_silhouette()` : une barre par observation, une silhouette négative signale une observation mal classée par rapport à son cluster
 -   `interpret()` : caractérise chaque cluster par ses variables les plus discriminantes
 
-## À retenir
 
--   comparer **plusieurs méthodes et plusieurs $k$** sous les mêmes indices de validation, exactement comme `compare()` le fait pour l'apprentissage supervisé
--   ne jamais retenir aveuglément le score le plus élevé : vérifier les tailles de cluster avant de conclure, un score parfait peut n'être que 2-3 valeurs aberrantes
--   `plot_clusters()` et `plot_silhouette()` complètent les indices numériques par une inspection visuelle avant de conclure
--   prochaine étape naturelle : croiser les clusters retenus avec le statut de résistance à la ciprofloxacine pour voir si la structure non supervisée recoupe le phénotype
