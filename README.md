@@ -31,6 +31,8 @@ pour sept autres antibiotiques. Il combine :
 │   ├── projet-enonce.qmd
 │   ├── projet-enonce.html
 │   ├── projet-enonce.pdf
+│   ├── projet-correction.qmd
+│   ├── projet-correction.html
 │   ├── projet-correction-code.R
 │   ├── ecoli_amr_isolate_v2.csv
 │   ├── build_clean_data.R
@@ -45,11 +47,12 @@ pour sept autres antibiotiques. Il combine :
     └── articles et documentation du cours
 ```
 
-Le script `project/projet-correction-code.R` constitue le corrigé en code R.
-Il est destiné à être consulté après la remise des travaux, afin que les
-étudiants puissent comparer leur démarche, comprendre leurs erreurs et
-reprendre l'analyse pas à pas. Pendant la réalisation du projet, seul l'énoncé
-fait foi.
+Le [corrigé complet](project/projet-correction.html), son
+[source Quarto](project/projet-correction.qmd) et le script autonome
+`project/projet-correction-code.R` sont destinés à être consultés après la
+remise des travaux, afin que les étudiants puissent comparer leur démarche,
+comprendre leurs erreurs et reprendre l'analyse pas à pas. Pendant la
+réalisation du projet, seul l'énoncé fait foi.
 
 ## Prérequis
 
