@@ -5,8 +5,6 @@
 .quarto/
 *_files/
 
-# Corrections (not pushed)
-project/projet-correction.qmd
-project/projet-correction.html
+# Correction render intermediates
 project/projet-correction.rmarkdown
 project/projet-correction_files/

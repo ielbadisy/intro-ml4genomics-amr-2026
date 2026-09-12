@@ -1,0 +1,1115 @@
+---
+title: "Corrigé : Apprentissage automatique pour la génomique"
+subtitle: "Prédiction de la résistance à la ciprofloxacine chez *E. coli* : phénotypage non supervisé et prédiction supervisée"
+author: "DU Bioinformatique, UM6SS"
+date: today
+date-format: "D MMMM YYYY"
+lang: fr
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    theme: cosmo
+    code-fold: false
+    self-contained: true
+    highlight-style: tango
+  pdf:
+    toc: true
+    number-sections: true
+    documentclass: article
+    geometry: margin=2.5cm
+    fig-width: 7
+    fig-height: 4.2
+execute:
+  echo: true
+  warning: false
+  message: false
+  cache: false
+bibliography: ../refs/references.bib
+---
+
+```{r}
+#| label: setup
+#| include: false
+set.seed(2026)
+```
+
+::: {.callout-important}
+Ce document est le **corrigé complet** du projet (`projet-enonce.qmd`). Il
+ne doit pas être distribué aux étudiants avant la remise de leur travail.
+:::
+
+# Déroulé de l'analyse
+
+```text
+import des données
+      │
+compréhension des données
+      │
+prétraitement
+      │
+hypothèses de travail
+      │
+   ┌──┴───────────────────────┐
+apprentissage non supervisé   apprentissage supervisé
+(phynotype)                    (funcml)
+cluster -> valider ->          registre -> comparer -> régler ->
+explorer -> interpréter ->     ajuster -> rééchantillonner ->
+prédire                        prédire -> interpréter
+   └──┬───────────────────────┘
+      ▼
+lecture croisée : le phénotype non supervisé aide-t-il le modèle supervisé ?
+```
+
+Le volet non supervisé cherche *quels groupes d'isolats existent*, sans utiliser l'étiquette de résistance. Le volet supervisé cherche *peut-on prédire la résistance*, et utilise le phénotype trouvé en amont comme une
+variable candidate parmi d'autres.
+
+# Import des données
+
+```{r}
+#| label: import
+library(basetable)
+
+raw <- btread("ecoli_amr_isolate_v2.csv")
+dim(raw)
+```
+
+# Compréhension des données
+
+```{r}
+#| label: understand
+library(basetable)
+
+preview(raw)
+count(raw, by = "ciprofloxacin")
+```
+
+Une ligne = un isolat d'*E. coli* : caractéristiques d'assemblage
+(`genome_length`, `gc_content`, `contigs`, `mlst`), métadonnées
+(`isolation_country`, `host_name`, `collection_year`), et phénotypes AST
+pour 8 antibiotiques, dont `ciprofloxacin`, la cible du volet supervisé.
+
+La ciprofloxacine est une fluoroquinolone, antimicrobien critique de
+priorité maximale selon l'OMS et traitement oral de première ligne pour les
+infections urinaires et bactériémies à *E. coli* ; la perdre restreint les
+options à des molécules généralement injectables, plus toxiques, ou les
+deux. Biologiquement, la résistance est surtout acquise par mutations
+chromosomiques ponctuelles dans les régions déterminant la résistance aux
+quinolones (QRDR) de `gyrA` (ADN gyrase) et `parC` (topoisomérase IV),
+les enzymes ciblées par la ciprofloxacine, qui produisent individuellement des
+sauts nets de concentration minimale inhibitrice. C'est pourquoi la
+séparation résistant/sensible est en général propre et bimodale pour cet
+antibiotique, même selon différentes méthodes de ML [@anahtar2021],
+contrairement à des antibiotiques aux distributions de CMI continues et
+chevauchantes : une partie de la "facilité" de classification obtenue plus
+bas tient au mécanisme de l'antibiotique, pas seulement aux variables
+utilisées.
+
+# Prétraitement
+
+Objectifs : une ligne par isolat, une cible binaire propre, et deux types
+de valeurs manquantes traités différemment. Un résultat AST jamais réalisé
+("non testé") est codé comme catégorie explicite : l'imputer fabriquerait
+un résultat clinique qui n'a jamais été mesuré. `isolation_country`, à
+l'inverse, est une métadonnée de collecte : manquante parce qu'un
+enregistrement est incomplet, pas parce qu'un test a été sauté. C'est une
+cible légitime d'imputation, réalisée avec `missknn::missknn()`
+[imputation par k plus proches voisins masqués sur les variables
+d'assemblage et de métadonnées observées conjointement], plutôt que
+regroupée dans une catégorie "Inconnu" générique, ce qui confondrait des
+enregistrements réellement manquants avec une vraie catégorie
+"pays rare/inconnu" et ajouterait du bruit exactement là où **H3** en a le
+moins besoin.
+
+```{r}
+#| label: install-missknn
+#| eval: false
+install.packages("pak")
+pak::pak("ielbadisy/missknn")
+```
+
+```{r}
+#| label: preprocess
+library(missknn)
+
+abx_other <- c("ampicillin", "cefotaxime", "meropenem", "sxt",
+               "ceftazidime", "gentamicin", "pip_taz")
+
+iso <- raw |>
+  uniquerows(cols = "genome_id", .keep_all = TRUE) |>
+  subset(ciprofloxacin %in% c("Resistant", "Susceptible")) |>
+  transform(
+    cipro_R  = factor(ifelse(ciprofloxacin == "Resistant", "R", "S"), levels = c("S", "R")),
+    host_grp = factor(ifelse(is.na(host_name), "Unknown",
+                      ifelse(grepl("Homo sapiens", host_name), "Human", "Animal/other")))
+  )
+
+# isolation_country : métadonnée imputable (missknn), contrairement aux AST
+country_imp <- iso[, c("isolation_country", "genome_length", "gc_content",
+                        "contigs", "collection_year")]
+country_imp$isolation_country <- factor(country_imp$isolation_country)
+imp <- missknn(country_imp, k = 5, seed = 2026)
+iso$isolation_country <- complete(imp)$isolation_country
+
+# pays rares regroupés ("Other" = rare, pas manquant) pour éviter des niveaux absents d'un pli de CV
+frequent_countries <- names(which(table(iso$isolation_country) >= 25))
+iso$country_grp <- factor(ifelse(
+  iso$isolation_country %in% frequent_countries,
+  as.character(iso$isolation_country), "Other"
+))
+
+# co-résistance : NA = "non testé", catégorie structurelle, non imputée
+for (a in abx_other) iso[[a]] <- factor(nato(iso[[a]], "Not_tested"))
+
+iso <- pick(iso, c("genome_id", "cipro_R",
+                   "genome_length", "gc_content", "contigs",
+                   abx_other, "host_grp", "country_grp"))
+iso <- iso[complete.cases(iso), ]
+
+dim(iso)
+count(iso, by = "cipro_R")
+```
+
+```{r}
+#| label: prevalence
+prev <- mean(iso$cipro_R == "R")
+round(prev, 3)
+```
+
+La prévalence de résistance est d'environ `r round(100 * prev)`% : une
+cible **déséquilibrée**, ce qui oriente le choix des métriques dans le
+volet supervisé. Le déséquilibre de classes est l'une des propriétés
+structurelles des données génomiques qui met le plus souvent en défaut les
+outils par défaut : l'exactitude et même l'AUC-ROC peuvent sembler
+trompeusement élevées sur la classe majoritaire alors que le modèle est peu
+informatif pour la classe minoritaire [@whalen2022], d'où le choix, plus
+bas, de rapporter le score de Brier, la calibration et une lecture
+précision/rappel de la ROC [@saito2015] en complément de l'AUC seule.
+
+# Hypothèses de travail
+
+- **H1, co-résistance.** Les autres phénotypes bêta-lactamines/
+  aminosides (`cefotaxime`, `ceftazidime`, `gentamicin`) sont-ils associés
+  à la résistance ciprofloxacine, plausible via des plasmides/intégrons
+  partagés ? Chez *E. coli*, la résistance aux céphalosporines de 3ᵉ
+  génération (`cefotaxime`, `ceftazidime`) est très majoritairement portée
+  par des bêta-lactamases à spectre étendu (BLSE, famille `bla`-CTX-M), et
+  la résistance aux aminosides (`gentamicin`) par des enzymes modifiant les
+  aminosides ; ces deux classes de gènes sont fréquemment co-portées, avec
+  des intégrons de classe 1 et parfois des gènes de résistance plasmidique
+  aux quinolones (PMQR : `qnr`, `aac(6')-Ib-cr`), sur les mêmes grands
+  plasmides conjugatifs. Un effet moyen positif de `cefotaxime_AST` sur la
+  résistance ciprofloxacine serait cohérent avec une **co-sélection par
+  éléments génétiques mobiles partagés**, pas une preuve que la résistance
+  au céfotaxime cause mécaniquement la résistance à la ciprofloxacine, au
+  mieux, deux passagers génétiquement liés.
+- **H2, signal d'assemblage.** `genome_length`/`gc_content` portent-ils
+  un signal, vraisemblablement un marqueur indirect du contenu accessoire
+  (plasmides, éléments mobiles) plutôt qu'un effet direct ? Chez
+  *E. coli*, l'essentiel de la variation inter-isolats de longueur
+  d'assemblage vient du génome accessoire (plasmides, prophages, îlots
+  génomiques) plutôt que du génome cœur, et l'ADN acquis par transfert
+  horizontal a souvent un %GC différent du ~50,8% chromosomique de base ;
+  ces deux variables sont donc des proxys grossiers de la quantité d'ADN
+  étranger porté par un isolat, cohérent avec le rôle dominant du transfert
+  horizontal de gènes dans la résistance des Enterobacteriaceae identifié
+  par @moradigaravand2018, plutôt que des marqueurs à lien mécanistique
+  direct avec la résistance aux quinolones comme le sont `gyrA`/`parC`.
+- **H3, confusion géographique/hôte.** `country_grp`/`host_grp` sont-ils
+  répartis inégalement entre classes, risque d'effet de collecte plutôt
+  que de biologie ? Mais "effet de collecte" et "biologie" ne sont pas
+  toujours séparables en pratique : @moradigaravand2018 ont montré que la
+  structure de population (lignée phylogénétique) seule prédit la
+  résistance d'*E. coli* avec ~0,79 d'exactitude, en grande partie parce
+  que quelques clones multirésistants à haut risque (p. ex. ST131) se sont
+  diffusés mondialement et dominent certaines collections. Un rang élevé
+  pour `country_grp` peut donc signifier soit un artefact
+  d'échantillonnage, soit le reflet, dans ce jeu de données, de la
+  diffusion réelle d'un clone résistant ; la validation croisée groupée et
+  l'effet ajusté ci-dessous permettent de trancher partiellement, mais pas
+  totalement sans données de typage de souche (p. ex. `mlst`) explicitement
+  intégrées au modèle.
+
+H1 et H3 sont, structurellement, la même menace lue sous deux angles : une
+variable réellement prédictive (H1) est difficile à distinguer d'une
+variable qui ne fait que co-varier avec la façon dont les isolats ont été
+collectés (H3), sauf à modéliser explicitement la structure de collecte.
+C'est un cas particulier des pièges de **dépendance** et de **confusion**
+catalogués pour l'apprentissage automatique génomique par @whalen2022 : des
+exemples d'un même pays ou d'un même lot d'étude ne sont pas des tirages
+indépendants, si bien qu'une validation croisée classique, exemple par
+exemple, peut sembler performante pour des raisons sans rapport avec la
+biologie de la résistance.
+
+```{mermaid}
+%%| label: fig-confounding-dag
+%%| fig-cap: "Deux lectures d'une association co-résistance/phénotype : un effet direct ou de mécanisme partagé (H1), ou un effet artefactuel induit par la collecte (H3)."
+flowchart LR
+  classDef hyp fill:#eef2ff,stroke:#4338ca,color:#1e1b4b;
+  classDef obs fill:#f0fdf4,stroke:#15803d,color:#052e16;
+  classDef out fill:#fef2f2,stroke:#b91c1c,color:#450a0a;
+
+  cef["résistance céfotaxime /\nceftazidime / gentamicine"]:::obs
+  geo["country_grp / host_grp\n(collecte)"]:::obs
+  cip["cipro_R"]:::out
+
+  cef -- "H1 : plasmide/intégron partagé\n(biologique)" --> cip
+  geo -- "H3 : échantillonnage inégal\n(confusion)" --> cef
+  geo -- "H3 : échantillonnage inégal\n(confusion)" --> cip
+```
+
+Le volet non supervisé teste si les isolats se regroupent en phénotypes
+cohérents avec ces hypothèses *avant* toute utilisation de l'étiquette ; le
+volet supervisé les teste directement via l'importance de variable et un
+effet ajusté.
+
+---
+
+# Apprentissage non supervisé
+
+## Installation et chargement de `phynotype`
+
+```{r}
+#| label: load-phynotype
+#| eval: false
+install.packages("pak")
+pak::pak("ielbadisy/phynotype")
+```
+
+```{r}
+#| label: library-phynotype
+library(phynotype)
+```
+
+## Préparation des données mixtes
+
+```{r}
+#| label: prep-mixed
+cluster_vars <- c("genome_length", "gc_content", "contigs",
+                   abx_other, "host_grp", "country_grp")
+
+iso_mixed <- prepare_mixed_data(iso[, cluster_vars], center = TRUE, scale = TRUE)
+dim(iso_mixed)
+```
+
+## Clustering
+
+```{r}
+#| label: cluster
+fit_phen <- cluster(iso_mixed, method = "kmeans", k = 3, seed = 2026)
+fit_phen
+sizes(fit_phen)
+```
+
+## Validation
+
+```{r}
+#| label: validate
+val <- validate(fit_phen)
+val$metrics_table
+```
+
+**Méthode.** Pour une observation $i$ affectée au cluster $C_i$, la
+largeur de silhouette compare la dissimilarité intra-cluster
+$a(i)$ (distance moyenne aux autres membres de $C_i$) à la dissimilarité
+au cluster voisin le plus proche $b(i)$ :
+$$s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))} \in [-1, 1].$$
+L'indice de Calinski-Harabasz est un rapport de variance
+inter/intra-cluster (analogue à un F de l'ANOVA, à maximiser), l'indice de
+Davies-Bouldin moyenne, pour chaque cluster, la similarité au cluster le
+plus proche (à minimiser). L'ARI bootstrap ré-échantillonne les données,
+reclustérise, et compare chaque partition bootstrap à la partition
+originale via l'indice de Rand ajusté
+$\mathrm{ARI} = (\mathrm{RI} - \mathbb{E}[\mathrm{RI}]) / (\max(\mathrm{RI}) - \mathbb{E}[\mathrm{RI}])$,
+qui vaut 1 pour un accord parfait et ~0 pour un accord de niveau hasard.
+
+**Interprétation.** Pour $k = 3$ : silhouette = 0,155 (structure modeste,
+attendue sur des données mixtes réelles et non des blobs synthétiques),
+Calinski-Harabasz = 72,2, Davies-Bouldin = 2,41, et surtout ARI bootstrap =
+**0,976** - la partition est presque parfaitement reproduite sous
+ré-échantillonnage, un signal de stabilité fort.
+
+```{r}
+#| label: validate-grid
+grid_val <- validate(iso_mixed, method = "kmeans", k = 2:6)
+grid_val$metrics_table
+```
+
+**Interprétation de la grille $k = 2..6$.** La silhouette reste plate
+(0,13 à 0,17) sur toute la grille - $k=4$ et $k=6$ l'emportent même
+légèrement (0,170-0,171) sur $k=3$ (0,155) - mais l'ARI bootstrap se
+dégrade fortement au-delà de $k=3$ : 0,997 ($k=2$), 0,981 ($k=3$), 0,921
+($k=4$), puis chute à 0,769 ($k=5$) et 0,606 ($k=6$). C'est exactement le
+compromis validité/stabilité annoncé plus haut : un $k$ plus grand
+"achète" un gain géométrique marginal et non monotone au prix d'une perte
+de reproductibilité substantielle. $k=3$ est retenu comme le plus grand
+$k$ qui reste dans la zone de haute stabilité (ARI $>0,95$).
+
+## Exploration
+
+```{r}
+#| label: explore
+expl <- explore(fit_phen, data = iso[, cluster_vars])
+names(expl)
+```
+
+### Projection des clusters
+
+```{r}
+#| label: embedding
+#| fig-height: 4.5
+plot_clusters(fit_phen, data = iso_mixed)
+```
+
+### Silhouette
+
+```{r}
+#| label: silhouette
+#| fig-height: 4.5
+plot_silhouette(fit_phen, data = iso_mixed)
+```
+
+### Consensus et co-association
+
+```{r}
+#| label: metacluster
+mfit <- metacluster(
+  iso_mixed,
+  methods = c("kmeans", "pam", "hclust"),
+  k = 2:5,
+  seed = 2026
+)
+mfit$stability_summary
+mfit$selection_summary
+```
+
+```{r}
+#| label: coassoc-consensus
+#| fig-height: 4.5
+plot_coassoc(mfit)
+plot_consensus(mfit)
+plot_dendrogram(mfit)
+```
+
+### Profils des variables
+
+```{r}
+#| label: profiles
+#| fig-height: 4.5
+plot_feature_profiles(expl)
+expl$separation_table
+```
+
+Lecture biologique, pas seulement géométrique : un cluster qui se sépare
+principalement sur `cefotaxime`/`ceftazidime`/`gentamicin` (co-résistance)
+est la signature phénotypique qu'un plasmide multirésistant produirait -
+une lignée porteuse de BLSE et d'enzymes modifiant les aminosides, repérée
+par un seul passage non supervisé, sans jamais utiliser `cipro_R` (H1). Un
+cluster qui se sépare surtout sur `country_grp`/`host_grp` est exactement
+ce à quoi ressemblerait un artefact d'échantillonnage/de lignée (H3) -
+signal à noter avant même de toucher à l'étiquette.
+
+**Interprétation.** Le biplot place le cluster 3 nettement du côté
+`country_grp_England`/`country_grp_United.Kingdom`/`host_grp_Human`, le
+cluster 1 du côté `country_grp_USA`/co-résistance "Not_tested", et le
+cluster 2 vers `country_grp_Other` : les deux premiers axes de l'ACM
+séparent donc les isolats **autant par géographie de collecte que par
+profil de résistance**, un signal H3 visible dès l'étape non supervisée,
+avant tout modèle prédictif.
+
+### Tailles des clusters
+
+```{r}
+#| label: sizes
+#| fig-height: 3.5
+plot_cluster_sizes(fit_phen)
+```
+
+### Biplot
+
+```{r}
+#| label: biplot
+#| fig-height: 4.5
+plot_biplot(fit_phen)
+plot_biplot(fit_phen, variant = "cos2")
+```
+
+## Interprétabilité
+
+Chaque étape ci-dessus décrit les *données* ; les trois méthodes suivantes
+décrivent la *règle de clustering* ajustée, traitée comme un prédicteur
+boîte noire et sondée exactement comme un classifieur, avec la famille de
+méthodes agnostiques au modèle passées en revue par @watson2022. `kmeans`
+n'est pas intrinsèquement interprétable : une affectation de cluster ne
+vient pas avec un "parce que", donc les trois outils suivants sont tous
+post-hoc et agnostiques au modèle ; ce qui diffère est la portée
+(globale/locale).
+
+### Importance par permutation
+
+```{r}
+#| label: permute-importance
+#| fig-height: 4.5
+imp_clust <- feature_importance(fit_phen, data = iso_mixed, metric = "silhouette",
+                                 n_repeats = 10, seed = 2026)
+imp_clust$summary
+plot(imp_clust)
+```
+
+**Méthode.** Pour chaque variable $j$, `feature_importance()` permute
+$x_j$ à travers les observations et mesure la dégradation de la métrique
+de clustering choisie (ici la silhouette moyenne) :
+$$\mathrm{Imp}(j) = \overline{\text{silhouette}}(X) - \overline{\text{silhouette}}(X_{\pi_j}),$$
+moyennée sur `n_repeats = 10` permutations indépendantes ; une variable
+sans rôle dans la géométrie du clustering donne une importance proche de
+0.
+
+Lecture face à **H1**–**H3** : si `country_grp`/`host_grp` arrivent en
+tête, les phénotypes trouvés ci-dessus reflètent, au moins en partie, une
+signature de collecte plutôt que biologique (H3).
+
+**Interprétation.** `host_grp_Unknown` et `country_grp_Norway` dominent
+le classement (~0,030 chacune), suivies de `host_grp_Human` (~0,027),
+`country_grp_England` (~0,018) et `country_grp_United.Kingdom` (~0,017) ;
+les variables de co-résistance (`sxt_Not_tested`, `pip_taz_*`) occupent
+une place intermédiaire, et `genome_length`/`gc_content` un rang faible.
+La géométrie du clustering est donc majoritairement portée par les
+métadonnées de collecte plutôt que par le signal d'assemblage - un
+signal H3 net dès l'étape non supervisée.
+
+### Profils ceteris paribus
+
+```{r}
+#| label: ceteris-paribus
+#| fig-height: 4.5
+cp <- ceteris_paribus(
+  fit_phen, iso_mixed[1:3, ],
+  features = c("genome_length", "gc_content"),
+  grid_size = 20
+)
+plot(cp)
+```
+
+### LIME
+
+```{r}
+#| label: lime
+#| fig-height: 4.5
+lx <- lime_explain(fit_phen, iso_mixed[1:3, ], n_permutations = 100,
+                    n_features = 6, seed = 2026)
+lx$explanations[, c("observation", "feature", "estimate", "direction")]
+plot(lx)
+```
+
+## Prédiction et rattachement au volet supervisé
+
+```{r}
+#| label: predict-phynotype
+new_isolates <- iso_mixed[1:5, ]
+pred_phen <- predict(fit_phen, new_isolates)
+pred_phen$clusters
+head(pred_phen$distances)
+```
+
+```{r}
+#| label: attach-phenotype
+iso$phenotype <- factor(clusters(fit_phen))
+count(iso, by = c("phenotype", "cipro_R"))
+```
+
+Les phénotypes ont été construits **sans** `cipro_R` ; les croiser
+maintenant est une vérification externe légitime, pas un raisonnement
+circulaire.
+
+**Interprétation.** Le taux de résistance observé diffère nettement
+selon le phénotype : phénotype 1 (n = 350) 40/350 = 11,4% R, phénotype 2
+(n = 129) 49/129 = **38,0% R**, phénotype 3 (n = 204) 55/204 = 27,0% R,
+contre 21,1% en moyenne globale. Le phénotype 2, le plus petit cluster et
+celui associé au pic de co-résistance dans le profil de variables
+ci-dessus, concentre plus de trois fois plus de résistance que le
+phénotype 1 : une structure trouvée sans étiquette porte donc déjà, à ce
+stade, un signal externe non trivial.
+
+---
+
+# Apprentissage supervisé
+
+## Installation et chargement des packages
+
+```{r}
+#| label: load-supervised
+#| eval: false
+install.packages("pak")
+pak::pak("ielbadisy/funcml")
+```
+
+`fastgbm` et `densemlp` sont désormais deux apprenants **enregistrés
+directement dans `funcml`** (dépendances de `funcml`, installées avec lui) :
+plus besoin de les charger ni de les appeler séparément, ils passent par la
+même interface `fit()`/`compare()`/`predict()`/`interpret()` que les cinq
+autres.
+
+```{r}
+#| label: library-supervised
+library(funcml)
+```
+
+## Jeu de test
+
+Le jeu de test est mis de côté **une seule fois**, avant tout réglage ou
+sélection de modèle, et n'est utilisé qu'à la fin pour la ROC, la
+calibration et l'analyse de courbe de décision (garde-fou contre le piège
+de **fuite de données**) : tout prétraitement ou sélection ajusté sur les
+données regroupées avant la séparation laisserait fuiter de l'information
+sur le jeu de test vers l'entraînement, gonflant artificiellement la
+performance apparente [@whalen2022].
+
+```{r}
+#| label: split
+f <- cipro_R ~ genome_length + gc_content + contigs +
+     ampicillin + gentamicin + cefotaxime + meropenem + sxt +
+     ceftazidime + pip_taz + host_grp + country_grp + phenotype
+
+set.seed(2026)
+idx_test <- sample(nrow(iso), floor(0.25 * nrow(iso)))
+train <- iso[-idx_test, ]
+test  <- iso[ idx_test, ]
+c(train = nrow(train), test = nrow(test))
+```
+
+## Comparaison des sept apprenants
+
+Les sept candidats sont désormais **tous enregistrés directement dans
+`funcml`** - `fastgbm` et `densemlp` le sont depuis leur intégration comme
+apprenants natifs du package - et donc comparés en un seul appel à
+`compare()` sur validation croisée à 5 plis, sur le jeu d'entraînement
+uniquement. Outre l'AUC et le score de Brier (adaptés au déséquilibre de
+classes constaté plus haut), l'exactitude (`accuracy`) et le F1-score sont
+rapportés à titre indicatif : à prévalence ~`r round(100 * prev)`%,
+l'exactitude seule peut être trompeusement élevée sur la classe
+majoritaire [@whalen2022], et le F1-score, moyenné macro sur les deux classes (implémentation `funcml`),
+est une lecture complémentaire plus sensible à une faiblesse sur la classe
+minoritaire.
+
+```{r}
+#| label: compare-funcml
+#| fig-height: 4
+candidate_models <- c("glm", "rpart", "ranger", "kknn", "e1071_svm",
+                       "fastgbm", "densemlp")
+
+cmp <- compare(
+  data = train, formula = f,
+  models = candidate_models,
+  resampling = cv(5, seed = 2026),
+  metrics = c("auc", "brier", "accuracy", "f1"),
+  seed = 2026
+)
+cmp$results
+plot(cmp)
+```
+
+`glm` = régression logistique (référence linéaire interprétable) ;
+`rpart` = arbre de décision unique ; `ranger` = forêt aléatoire ;
+`fastgbm` = boosting de gradient histogramme (backend compilé) ;
+`densemlp` = réseau dense feed-forward natif ; `kknn` = k plus proches
+voisins ; `e1071_svm` = machine à vecteurs de support. Le choix du modèle
+se lit sur l'intervalle, pas seulement sur la moyenne : un écart plus petit
+que la largeur de l'intervalle n'est pas une différence réelle, et un
+classement qui diverge entre AUC/Brier et accuracy/F1 est lui-même une
+information sur le déséquilibre de classes.
+
+**Méthode.** L'AUC-ROC est la probabilité qu'un isolat résistant tiré au
+hasard reçoive un score plus élevé qu'un isolat sensible tiré au hasard
+(équivalent de la statistique $U$ de Mann-Whitney normalisée), donc
+insensible à la prévalence. Le score de Brier est l'erreur quadratique
+moyenne sur les probabilités prédites,
+$\mathrm{Brier} = \frac{1}{n}\sum_i (\hat p_i - y_i)^2$ (à minimiser).
+L'exactitude est $(\mathrm{TP}+\mathrm{TN})/n$ ; le F1 (ici macro-moyenné
+sur les deux classes) est la moyenne harmonique précision/rappel,
+$F_1 = 2 \cdot \frac{\text{précision} \cdot \text{rappel}}{\text{précision} + \text{rappel}}$.
+
+**Interprétation.** `ranger` domine sur les quatre métriques : AUC =
+0,889 [0,877 ; 0,900], Brier = 0,207, exactitude = 0,864, F1 = 0,782.
+`kknn` (AUC 0,857) et `glm` (AUC 0,837) suivent, avec des intervalles qui
+chevauchent partiellement celui de `ranger`. `fastgbm` (AUC 0,743) et
+`rpart` (AUC 0,700) sont nettement en retrait ; `densemlp` (AUC 0,805)
+se situe dans la zone intermédiaire mais avec l'écart-type le plus élevé
+du lot, cohérent avec un réseau de neurones plus gourmand en données que
+les quelques centaines d'isolats disponibles ici.
+
+```{r}
+#| label: select-best
+auc_tbl <- subset(cmp$results, metric == "auc")
+best_model <- auc_tbl$model[which.max(auc_tbl$mean)]
+best_model
+```
+
+Sur ce jeu de données et ce découpage, `ranger` (forêt aléatoire) arrive
+généralement en tête sur l'AUC validée croisée, avec `kknn` et `glm`
+proches derrière ; `fastgbm` et `densemlp`, malgré leur flexibilité
+supplémentaire, n'apportent pas de gain net sur un jeu de cette taille
+(quelques centaines d'isolats), un rappel que la complexité
+supplémentaire n'est pas automatiquement récompensée sur des données
+tabulaires modestes [@moradigaravand2018]. Comme les sept modèles passent
+désormais tous par `funcml::fit()`/`predict()`/`interpret()`, `best_model`
+peut être n'importe lequel des sept sans adaptation des sections
+suivantes, quel que soit celui qui l'emporte sur votre exécution.
+
+## Réglage des hyperparamètres
+
+`funcml::tune()` prend une grille explicite (`expand.grid()` sur les
+hyperparamètres du modèle) ; il n'existe pas de grille "par défaut"
+générée automatiquement par le package. La grille ci-dessous ne couvre
+que `best_model` et reste volontairement petite (validation croisée à 5
+plis $\times$ jusqu'à 27 configurations).
+
+```{r}
+#| label: tuning-grid
+tuning_grid <- switch(best_model,
+  ranger    = expand.grid(num.trees = c(300, 500, 800),
+                           mtry = c(2, 4, 6),
+                           min.node.size = c(1, 5, 10)),
+  rpart     = expand.grid(cp = c(0.001, 0.01, 0.05),
+                           minsplit = c(10, 20, 40)),
+  kknn      = expand.grid(k = c(5, 7, 11, 15), distance = c(1, 2)),
+  e1071_svm = expand.grid(cost = c(0.1, 1, 10), gamma = c(0.01, 0.1, 1)),
+  fastgbm   = expand.grid(ntrees = c(100, 200, 400),
+                           learning_rate = c(0.05, 0.1, 0.2),
+                           max_depth = c(3, 5, 7)),
+  densemlp  = expand.grid(dropout = c(0, 0.2), lr = c(1e-3, 5e-4)),
+  glm       = NULL
+)
+```
+
+```{r}
+#| label: tune
+if (!is.null(tuning_grid)) {
+  tuned <- tune(
+    data = train, formula = f, model = best_model,
+    grid = tuning_grid,
+    resampling = cv(5, seed = 2026),
+    metric = "auc", type = "prob"
+  )
+  tuned
+  tuned$best
+  plot(tuned)
+  fit_best <- tuned$fit_best
+} else {
+  fit_best <- fit(f, data = train, model = best_model, seed = 2026)
+}
+```
+
+`glm` n'a pas d'hyperparamètre à régler dans cette paramétrisation : la
+grille est `NULL` et le modèle final est simplement ajusté sur ses
+réglages par défaut.
+
+## Ajustement final
+
+```{r}
+#| label: fit
+fit_best
+```
+
+## Validation croisée groupée
+
+Une validation croisée standard stratifiée suppose des plis échangeables ;
+quand les isolats se regroupent par collecte (`country_grp`), une
+validation **groupée** est la vérification honnête d'un effet de collecte
+(H3), le piège de **dépendance** : des exemples d'une même étude/collecte
+ne sont pas des tirages indépendants, et un pli qui répartit des isolats
+d'une même collecte entre entraînement et test laisse le modèle apprendre
+des raccourcis propres à la collecte plutôt que de la biologie
+[@whalen2022].
+
+```{r}
+#| label: resampling
+gcv <- group_cv(v = 5, group = train$country_grp, seed = 2026)
+ev_grouped <- evaluate(
+  data = train, formula = f, model = best_model, spec = fit_best$spec,
+  resampling = gcv, metrics = c("auc", "brier", "accuracy", "f1"), seed = 2026
+)
+ev_grouped$summary
+plot(ev_grouped)
+```
+
+Une baisse d'AUC par rapport à la validation croisée stratifiée standard
+est le signe qu'une partie de la performance précédente était un effet de
+collecte plutôt que de la biologie.
+
+**Interprétation.** L'AUC validée par groupe (pays) tombe à **0,714**
+[0,567 ; 0,860], contre 0,889 en validation croisée standard - une baisse
+d'environ 0,17, avec un intervalle de confiance nettement plus large
+(reflet du petit nombre de groupes-plis). L'exactitude (0,691) et le F1
+(0,668) reculent de façon similaire, et le Brier se dégrade (0,412 contre
+0,207). Une partie substantielle de la performance apparente du modèle
+provient donc bien d'un raccourci de collecte plutôt que d'un signal
+biologique généralisable - un résultat H3 sans ambiguïté sur ces données.
+
+## Prédiction
+
+```{r}
+#| label: predict-funcml
+p_mat <- predict(fit_best, newdata = test, type = "prob")
+head(p_mat)
+
+p_R <- p_mat[, "R"]
+cls <- predict(fit_best, newdata = test)
+table(predicted = cls, observed = test$cipro_R)
+
+c(accuracy = accuracy(test$cipro_R, cls),
+  f1       = f1(test$cipro_R, cls))
+```
+
+Sur le jeu de test, l'exactitude et le F1 se lisent en complément de l'AUC
+et du Brier ci-dessous, jamais à sa place : à prévalence
+~`r round(100 * prev)`%, une exactitude élevée peut simplement refléter la
+classe majoritaire, tandis que le F1 macro est plus sensible à une
+éventuelle faiblesse sur la classe minoritaire.
+
+**Interprétation.** La matrice de confusion (135 S/S, 21 R prédits S, 1 S
+prédit R, 13 R/R) donne une **spécificité** $\mathrm{TN}/(\mathrm{TN}+\mathrm{FP}) = 135/136 = 99,3\%$
+mais une **sensibilité** (rappel de la classe R)
+$\mathrm{TP}/(\mathrm{TP}+\mathrm{FN}) = 13/34 = 38,2\%$ nettement plus
+faible : le modèle est très conservateur, il ne prédit presque jamais
+"résistant" à tort, mais manque environ 6 isolats résistants sur 10.
+Cliniquement, ce sont les faux négatifs (résistance manquée) qui comptent
+le plus pour un choix d'antibiotique de première ligne, donc l'exactitude
+globale (0,871) masque une faiblesse réelle sur la classe qui importe.
+Le F1 (0,778, macro) le reflète en partie en pondérant les deux classes
+également, mais une lecture clinique demande de regarder la sensibilité
+isolément plutôt que l'exactitude ou le F1 seuls.
+
+## Interprétabilité
+
+### Importance de variable
+
+```{r}
+#| label: varimp
+#| fig-height: 4.5
+vip <- interpret(fit_best, data = train, method = "permute", seed = 2026)
+vip$result$scores
+plot(vip)
+```
+
+Classement **global**, agnostique au modèle : dégradation de la
+performance validée croisée quand une variable est permutée. Lu
+directement face aux trois hypothèses : un rang élevé pour les phénotypes
+de co-résistance soutient H1, un rang élevé pour `country_grp`/`host_grp`
+signale H3, cohérent avec la vérification par validation groupée
+ci-dessus.
+
+**Méthode.** Même principe que pour le clustering, appliqué ici à la
+métrique de classification :
+$\mathrm{Imp}(j) = \mathrm{métrique}(X) - \mathrm{métrique}(X_{\pi_j})$,
+moyennée sur les plis de validation croisée, où permuter une variable
+casse son association avec la cible sans changer sa distribution
+marginale.
+
+**Interprétation.** `gc_content` arrive en tête, suivi de `country_grp`,
+`genome_length`, `gentamicin`, `sxt`, `host_grp` et `contigs` ; les
+variables de co-résistance (`ceftazidime`, `ampicillin`, `cefotaxime`)
+occupent un rang intermédiaire. `phenotype` se classe avant-dernier,
+juste au-dessus de `pip_taz` et `meropenem` : un signal réel mais modeste,
+cohérent avec les 0,014 de contribution SHAP moyenne obtenus plus bas.
+Le classement mélange donc des variables H1 (co-résistance),
+H2 (assemblage) et H3 (`country_grp`, `host_grp`) sans qu'aucune
+hypothèse ne domine nettement les autres.
+
+### Dépendance partielle
+
+```{r}
+#| label: pdp
+#| fig-height: 4
+plot(interpret(fit_best, data = train, method = "pdp", features = "gc_content"))
+plot(interpret(fit_best, data = train, method = "pdp", features = "genome_length"))
+```
+
+Cohérent avec **H2** : un marqueur réellement indirect de contenu
+accessoire devrait montrer une pente faible ou bruitée plutôt qu'un effet
+net.
+
+**Méthode.** La dépendance partielle moyenne, sur la grille de valeurs de
+$x_S$, la prédiction obtenue en fixant $x_S$ et en laissant varier toutes
+les autres variables selon leur distribution empirique observée :
+$$\hat f_S(x_S) = \frac{1}{n}\sum_{i=1}^n \hat f(x_S, x_{C,i}).$$
+C'est un effet **marginal moyen** sur le jeu d'entraînement : il peut
+masquer des effets d'interaction hétérogènes entre individus.
+
+**Interprétation.** Pour `gc_content`, la probabilité prédite de
+résistance décline d'environ 0,83 à 0,68 lorsque le %GC passe de 50,2 à
+50,9 - une pente modeste mais réelle sur toute la plage observée. Pour
+`genome_length`, la courbe reste quasi plate jusqu'à ~5,0 Mb (~0,77-0,80)
+puis décline vers ~0,70 au-delà de 5,2-5,4 Mb : un seuil plutôt qu'une
+relation linéaire. Dans les deux cas la direction observée (plus de
+contenu accessoire associé, ici, à *moins* de résistance ciprofloxacine)
+n'a pas d'interprétation mécaniste évidente et ne doit pas être
+sur-interprétée ; ce qui compte pour H2 est que l'amplitude reste modérée
+par rapport aux variables de co-résistance, cohérent avec un effet
+indirect plutôt qu'un mécanisme direct comme `gyrA`/`parC`.
+
+### SHAP
+
+```{r}
+#| label: shap
+shap_local <- interpret(
+  fit_best, data = train, method = "shap",
+  newdata = test[1, , drop = FALSE], nsim = 30, seed = 2026
+)
+print(shap_local)
+```
+
+**Méthode.** La valeur de Shapley attribue à chaque variable $j$ sa
+contribution moyenne à la prédiction sur toutes les coalitions possibles
+de variables :
+$$\phi_j = \sum_{S \subseteq \{1,\dots,p\}\setminus\{j\}} \frac{|S|!\,(p-|S|-1)!}{p!}\Big[f(S\cup\{j\}) - f(S)\Big],$$
+de sorte que $\sum_j \phi_j = \hat f(x) - \mathbb{E}[\hat f(X)]$ : les
+contributions se décomposent exactement autour de la prédiction moyenne.
+`funcml` les approxime ici par échantillonnage Monte-Carlo (`nsim`).
+
+**Local** : pourquoi cette prédiction précise.
+
+**Interprétation.** Pour l'observation 1, la prédiction (0,077, très
+faible risque) est tirée vers le bas par `country_grp = Norway`
+($\phi = -0{,}051$) et `host_grp = Unknown` ($\phi = -0{,}037$), et un peu
+remontée par `ampicillin = Resistant` ($\phi = +0{,}033$) et
+`gc_content = 50,7` ($\phi = +0{,}028$) ; `phenotype = 1` ne contribue que
+$-0{,}019$, cohérent avec son rang modeste en importance globale.
+
+```{r}
+#| label: shap-waterfall
+#| fig-height: 4.5
+plot(shap_local, kind = "waterfall")
+```
+
+**Importance globale** : contribution absolue moyenne par variable,
+$\overline{|\phi_j|} = \frac{1}{n}\sum_i |\phi_j^{(i)}|$.
+
+```{r}
+#| label: shap-global
+#| fig-height: 4.5
+shap_global <- interpret(
+  fit_best, data = train, method = "shap",
+  newdata = test, nsim = 10, seed = 2026
+)
+plot(shap_global, kind = "bar")
+```
+
+```{r}
+#| label: shap-beeswarm-dependence
+#| fig-height: 4.5
+plot(shap_global, kind = "beeswarm")
+plot(shap_global, kind = "dependence", v = "gc_content")
+```
+
+**Interprétation.** Le classement SHAP global reprend, dans un ordre
+proche, celui de l'importance par permutation : `country_grp` (0,042) et
+`gc_content` (0,039) en tête, puis `sxt` (0,030), `gentamicin` (0,029),
+`genome_length` (0,026), `ceftazidime` (0,025), `ampicillin` (0,024),
+`cefotaxime` (0,023), `host_grp` (0,018), `phenotype` (0,014, à égalité
+avec `contigs`), `pip_taz` (0,010) et `meropenem` (0,005) en queue. Le
+beeswarm montre, pour `ampicillin`/`cefotaxime`, que les valeurs de
+variable élevées (rouge = `Resistant`) portent les contributions SHAP les
+plus positives, cohérent avec H1.
+
+À noter, comme point méthodologique : le graphe de dépendance SHAP pour
+`gc_content` sur le jeu de test montre une relation **positive** (SHAP
+croissant avec le %GC), à l'opposé de la pente négative observée sur le
+PDP calculé sur le jeu d'entraînement. Ce n'est pas une contradiction
+mais un rappel que le PDP moyenne un effet marginal sur toute la
+distribution d'entraînement, tandis que la dépendance SHAP reflète les
+contributions locales, sensibles aux interactions, sur les observations
+de test : les deux méthodes répondent à des questions légèrement
+différentes et ne doivent pas être lues comme interchangeables.
+
+### Calibration
+
+```{r}
+#| label: calibration
+#| fig-height: 4.5
+calib <- interpret(fit_best, data = test, method = "calibration")
+summary(calib)
+plot(calib)
+```
+
+Un modèle peut bien discriminer (AUC élevée) et rester mal calibré : Van
+Calster et al. [-@vancalster2019] qualifient la calibration de "talon
+d'Achille" de l'analyse prédictive précisément parce que la discrimination
+est vérifiée bien plus souvent.
+
+**Méthode.** Les prédictions sont regroupées en $B$ classes de probabilité
+(bins) ; l'erreur de calibration attendue moyenne les écarts entre taux
+observé et probabilité moyenne prédite par bin, pondérés par leur
+effectif $n_b$ :
+$$\mathrm{ECE} = \sum_{b=1}^{B} \frac{n_b}{n} \left| \mathrm{acc}(b) - \mathrm{conf}(b) \right|,$$
+et l'erreur maximale (MCE) en prend le maximum plutôt que la moyenne
+pondérée - un indicateur du pire bin plutôt que de la tendance générale.
+
+**Interprétation.** ECE = 0,104 et MCE = 0,251 sur le jeu de test (176
+isolats, donc des bins peu peuplés) : la calibration est imparfaite, avec
+un bin autour de 0,25 de probabilité prédite dont le taux observé est
+proche de 0 (sur-confiance locale) et, à l'inverse, un bin à ~0,65 de
+probabilité prédite dont le taux observé atteint ~0,88 (sous-confiance).
+Une AUC de test correcte (0,814, voir plus bas) ne garantit donc pas que
+les probabilités prédites soient directement utilisables comme risques
+absolus sans recalibration.
+
+### Analyse de courbe de décision
+
+```{r}
+#| label: dca
+#| fig-height: 4.5
+dca_res <- interpret(fit_best, data = test, method = "dca")
+plot(dca_res)
+```
+
+**Méthode.** Pour un seuil de décision $p_t$ (la probabilité de résistance
+à partir de laquelle on choisirait de ne pas prescrire de ciprofloxacine),
+le bénéfice net rapporte le nombre de vrais positifs à celui de faux
+positifs, pondéré par les probabilités relatives des deux erreurs à ce
+seuil :
+$$\mathrm{NB}(p_t) = \frac{\mathrm{TP}}{n} - \frac{\mathrm{FP}}{n}\cdot\frac{p_t}{1-p_t},$$
+comparé aux stratégies de référence "traiter tout le monde" et "ne traiter
+personne".
+
+**Interprétation.** La courbe du modèle reste au-dessus des deux
+stratégies de référence sur presque toute la plage de seuils cliniquement
+plausibles (jusqu'à ~0,85), et dépasse nettement "traiter tout le monde"
+au-delà d'un seuil ~0,20 - la zone où une stratégie non informée
+deviendrait rapidement délétère (bénéfice net négatif). Le modèle apporte
+donc un bénéfice net positif sur une large plage de seuils de décision, ce
+que l'AUC ou le Brier seuls ne montrent pas directement.
+
+### Courbe ROC et AUC
+
+```{r}
+#| label: roc-auc
+#| fig-height: 4.5
+roc_obj <- roc_curve(test$cipro_R, p_R)
+cat("AUC test :", round(roc_obj$auc, 3), "\n")
+plot(roc_obj)
+```
+
+**Interprétation.** L'AUC de test (0,814) est cohérente avec l'AUC
+validée croisée sur l'entraînement (0,889) mais plus proche de l'AUC
+groupée par pays (0,714, section précédente) - conforme à l'idée que le
+jeu de test, séparé une seule fois de façon aléatoire, partage une partie
+de la structure de collecte de l'entraînement, alors que la validation
+groupée par pays est un test plus sévère de généralisation hors
+collecte.
+
+### Effet moyen ajusté
+
+```{r}
+#| label: ate
+d_cef <- iso |>
+  subset(cefotaxime %in% c("Resistant", "Susceptible")) |>
+  transform(cefotaxime_AST = factor(as.character(cefotaxime),
+                                    levels = c("Susceptible", "Resistant")))
+
+ate <- estimate(
+  data = d_cef,
+  formula = cipro_R ~ genome_length + gc_content + contigs + cefotaxime_AST + host_grp,
+  model = best_model,
+  treatment = "cefotaxime_AST",
+  estimand = "ATE",
+  treatment_level = "Resistant",
+  control_level = "Susceptible",
+  seed = 2026
+)
+ate
+plot(ate)
+```
+
+Sous le modèle, et en supposant l'absence de facteur de confusion résiduel,
+passer de sensible à résistant sur le céfotaxime est associé à l'effet
+moyen rapporté ci-dessus sur la probabilité de résistance à la
+ciprofloxacine, cohérent avec **H1**, sans être en soi une preuve causale.
+
+**Méthode.** L'effet moyen de traitement par g-computation prédit, pour
+chaque isolat, la probabilité de résistance dans les deux scénarios
+contrefactuels (`cefotaxime_AST` fixé à "Resistant" pour tous, puis à
+"Susceptible" pour tous, à `genome_length`/`gc_content`/`contigs`/
+`host_grp` observés inchangés), et moyenne la différence :
+$$\widehat{\mathrm{ATE}} = \frac{1}{n}\sum_{i=1}^n \Big[\hat f(1, x_{C,i}) - \hat f(0, x_{C,i})\Big].$$
+C'est un effet ajusté sous le modèle, valide sous l'hypothèse
+d'absence de facteur de confusion résiduel non mesuré - une hypothèse
+forte, jamais vérifiable sur données observationnelles.
+
+**Interprétation.** $\widehat{\mathrm{ATE}} = 0{,}3144$, erreur standard
+0,0079, IC 95% [0,299 ; 0,330] : un effet ajusté large et précisément
+estimé - passer de sensible à résistant sur le céfotaxime est associé à
+environ +31 points de probabilité de résistance ciprofloxacine, à
+caractéristiques d'assemblage et hôte comparables. C'est le résultat
+quantitatif le plus net en faveur de **H1**, à lire avec la réserve
+méthodologique ci-dessus : compatible avec une co-sélection plasmidique,
+mais pas une preuve causale au sens strict.
+
+---
+
+# Question de lecture croisée
+
+Le phénotype non supervisé (`phenotype`) a été inclus comme variable
+candidate dans la formule `f` du volet supervisé dès la comparaison des
+sept apprenants. S'il ressort avec une importance de permutation ou une
+contribution SHAP non négligeable (à comparer visuellement, sur le graphe
+`plot(vip)` / `plot(shap_global, kind = "bar")`, aux variables de
+co-résistance et d'assemblage), la structure trouvée sans étiquette porte
+une information prédictive réelle, pas seulement du bruit : une validation
+externe non triviale du clustering.
+
+# Conclusion
+
+- **H1, co-résistance** : soutenue. `sxt`, `gentamicin`, `ceftazidime`,
+  `ampicillin` et `cefotaxime` se classent toutes en position
+  intermédiaire à haute en SHAP/importance par permutation, et l'effet
+  ajusté du céfotaxime sur la résistance ciprofloxacine est net et précis
+  ($\widehat{\mathrm{ATE}} = 0{,}314$, IC 95% [0,299 ; 0,330]).
+- **H2, signal d'assemblage** : soutenue, avec une réserve. `gc_content`
+  arrive en tête du classement (permutation *et* SHAP) et `genome_length`
+  en position intermédiaire, mais les pentes PDP restent d'amplitude
+  modeste (0,83 → 0,68 et 0,80 → 0,70 respectivement) et de direction non
+  mécanistiquement interprétable - un signal réel mais indirect, pas un
+  effet dominant.
+- **H3, confusion géographique** : soutenue fortement, à trois niveaux
+  indépendants - le biplot et l'importance par permutation du clustering
+  non supervisé (`country_grp`/`host_grp` en tête), le rang de
+  `country_grp` dans le modèle supervisé (2ᵉ en SHAP), et surtout la chute
+  de l'AUC groupée par pays (0,714) par rapport à la validation croisée
+  standard (0,889) - une baisse de 0,17 qui ne peut s'expliquer par le
+  hasard d'échantillonnage seul.
+- **Signal du phénotype** : confirmé mais modeste. `phenotype` contribue
+  0,014 en SHAP moyen (avant-dernier rang, devant `pip_taz` et
+  `meropenem` seulement), et le taux de résistance observé varie fortement
+  selon le phénotype (11,4% à 38,0%) : le clustering non supervisé porte
+  une information prédictive réelle, mais secondaire par rapport aux
+  variables de co-résistance et d'assemblage directement mesurées.
+
+Précaution valable pour chacun des points ci-dessus : dans leur propre
+étude pan-génomique de la résistance d'*E. coli*, @moradigaravand2018
+mettent en garde contre l'interprétation causale des variables retenues
+par un modèle, "l'impact réel des caractéristiques génétiques étant
+confondu par leur distribution phylogénétique et la structure de
+population", le même effet de lignée clonale derrière la nuance de H3
+ci-dessus.
+
+```{r}
+#| label: cleanup
+#| include: false
+if ("package:basetable" %in% search()) {
+  detach("package:basetable", unload = TRUE, force = TRUE)
+}
+```
+
+Ce que cette analyse **n'établit pas** : un mécanisme causal au-delà des
+hypothèses du modèle, une généralisation à d'autres pays/années sans
+validation externe, ou un substitut à de véritables prédicteurs
+génotypiques (gènes/mutations de résistance via AMRFinderPlus). Un rapport
+de ce type de pipeline devrait, en pratique, suivre une grille de lecture -
+DOME pour le ML en biologie [@walsh2021dome], TRIPOD+AI pour un modèle
+pronostique clinique [@collins2024tripodai].
+
+# Références {#sec-references}
+
+::: {#refs}
+:::
